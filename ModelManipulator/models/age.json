@@ -7,32 +7,38 @@
         {
             "textId": "Infant",
             "label": "Infant",
-            "iconName": "infant.png"
+            "iconName": "infant.png",
+            "color": "#7e43bc"
         },
         {
             "textId": "Baby",
             "label": "Baby",
-            "iconName": "baby.png"
+            "iconName": "baby.png",
+            "color": "#915dc6"
         },
         {
             "textId": "Young",
             "label": "Young",
-            "iconName": "young.png"
+            "iconName": "young.png",
+            "color": "#a377d0"
         },
         {
             "textId": "Mature",
             "label": "Mature",
-            "iconName": "mature.png"
+            "iconName": "mature.png",
+            "color": "#b592da"
         },
         {
             "textId": "Old",
             "label": "Old",
-            "iconName": "old.png"
+            "iconName": "old.png",
+            "color": "#c8ade4"
         },
         {
             "textId": "Transcendent",
             "label": "Transcendent",
-            "iconName": "transcendent.png"
+            "iconName": "transcendent.png",
+            "color": "#ede3f6"
         }
     ],
     "textId": "Cycles",

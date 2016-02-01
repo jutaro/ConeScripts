@@ -13,7 +13,8 @@
         {
             "textId": "Heptagramm",
             "label": "",
-            "iconName": "heptagramm.png"
+            "iconName": "heptagramm.png",
+            "color": "#338e90"
         },
         {
             "textId": "Brahma",
@@ -35,43 +36,43 @@
             "label": "Slave",
             "iconName": "slave.png",
             "isLeaf": false,
-            "color": [27,51,77]
+            "color": "#338e90"
         },
         {
             "textId": "Artisan",
             "label": "Artisan",
             "iconName": "artisan.png",
-            "color": [36,68,104]
+            "color": "#3ca9ac"
         },
         {
             "textId": "Warrior",
             "label": "Warrior",
             "iconName": "warrior.png",
-            "color": [36,68,104]
+            "color": "#4bbec1"
         },
         {
             "textId": "Scholar",
             "label": "Scholar",
             "iconName": "scholar.png",
-            "color": [54,104,160]
+            "color": "#66c8cb"
         },
         {
             "textId": "Sage",
             "label": "Sage",
             "iconName": "sage.png",
-            "color": [62,121,188]
+            "color": "#80d3d5"
         },
         {
             "textId": "Priest",
             "label": "Priest",
             "iconName": "priest.png",
-            "color": [86,140,200]
+            "color": "#9bdddf"
         },
         {
             "textId": "King",
             "label": "King",
             "iconName": "king.png",
-            "color": [113,158,210]
+            "color": "#b6e6e8"
         }
     ],
     "textId": "Laws",

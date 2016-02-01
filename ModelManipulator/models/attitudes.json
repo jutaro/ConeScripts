@@ -7,37 +7,44 @@
         {
             "textId": "Idealist",
             "label": "Idealist",
-            "iconName": "idealist.png"
+            "iconName": "idealist.png",
+            "color": "#75aa3d"
         },
         {
             "textId": "Skeptic",
             "label": "Skeptic",
-            "iconName": "skeptic.png"
+            "iconName": "skeptic.png",
+            "color": "#88c04b"
         },
         {
             "textId": "Spiritualist",
             "label": "Spiritualist",
-            "iconName": "spiritualist.png"
+            "iconName": "spiritualist.png",
+            "color": "#99ca65"
         },
         {
             "textId": "Stoic",
             "label": "Stoic",
-            "iconName": "stoic.png"
+            "iconName": "stoic.png",
+            "color": "#abd480"
         },
         {
             "textId": "Realist",
             "label": "Realist",
-            "iconName": "realist.png"
+            "iconName": "realist.png",
+            "color": "#bdde9a"
         },
         {
             "textId": "Cynic",
             "label": "Cynic",
-            "iconName": "cynic.png"
+            "iconName": "cynic.png",
+            "color": "#cfe7b6"
         },
         {
             "textId": "Pragmatist",
             "label": "Pragmatist",
-            "iconName": "pragmatist.png"
+            "iconName": "pragmatist.png",
+            "color": "#e1f0d1"
         }
     ],
     "textId": "Attitudes",

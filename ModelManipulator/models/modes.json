@@ -7,37 +7,44 @@
         {
             "textId": "Power",
             "label": "Power",
-            "iconName": "power.png"
+            "iconName": "power.png",
+            "color": "#9d389e"
         },
         {
             "textId": "Caution",
             "label": "Caution",
-            "iconName": "caution.png"
+            "iconName": "caution.png",
+            "color": "#b841b9"
         },
         {
             "textId": "Passion",
             "label": "Passion",
-            "iconName": "passion.png"
+            "iconName": "passion.png",
+            "color": "#c559c6"
         },
         {
             "textId": "Repression",
             "label": "Repression",
-            "iconName": "repression.png"
+            "iconName": "repression.png",
+            "color": "#cf73d0"
         },
         {
             "textId": "Aggression",
             "label": "Aggression",
-            "iconName": "aggression.png"
+            "iconName": "aggression.png",
+            "color": "#d98eda"
         },
         {
             "textId": "Perseverance",
             "label": "Perseverance",
-            "iconName": "perseverance.png"
+            "iconName": "perseverance.png",
+            "color": "#e3a9e3"
         },
         {
             "textId": "Observation",
             "label": "Observation",
-            "iconName": "observation.png"
+            "iconName": "observation.png",
+            "color": "#ecc4ec"
         }
     ],
     "textId": "Modes",

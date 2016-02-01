@@ -8,37 +8,44 @@
         {
             "textId": "Acceptance",
             "label": "Acceptance",
-            "iconName": "acceptance.png"
+            "iconName": "acceptance.png",
+            "color" : "#603594"
         },
         {
             "textId": "Rejection",
             "label": "Rejection",
-            "iconName": "rejection.png"
+            "iconName": "rejection.png",
+            "color" : "#723db0"
         },
         {
             "textId": "Growth",
             "label": "Growth",
-            "iconName": "growth.png"
+            "iconName": "growth.png",
+            "color" : "#844fc3"
         },
         {
             "textId": "Retardation",
             "label": "Retardation",
-            "iconName": "retardation.png"
+            "iconName": "retardation.png",
+            "color" : "#9769cd"
         },
         {
             "textId": "Dominance",
             "label": "Dominance",
-            "iconName": "dominance.png"
+            "iconName": "dominance.png",
+            "color" : "#aa84d6"
         },
         {
             "textId": "Submission",
             "label": "Submission",
-            "iconName": "submission.png"
+            "iconName": "submission.png",
+            "color" : "#bd9fe0"
         },
         {
             "textId": "Stagnation",
             "label": "Stagnation",
-            "iconName": "stagnation.png"
+            "iconName": "stagnation.png",
+            "color" : "#d0bae9"
         }
     ],
     "textId": "Goals",

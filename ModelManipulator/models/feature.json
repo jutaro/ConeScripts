@@ -7,37 +7,44 @@
         {
             "textId": "Greed",
             "label": "Greed",
-            "iconName": "greed.png"
+            "iconName": "greed.png",
+            "color": "#bbbc43"
         },
         {
             "textId": "Self-destruction",
             "label": "Self-destruction",
-            "iconName": "selfDestruction.png"
+            "iconName": "selfDestruction.png",
+            "color": "#c5c65d"
         },
         {
             "textId": "Arrogance",
             "label": "Arrogance",
-            "iconName": "arrogance.png"
+            "iconName": "arrogance.png",
+            "color": "#d0d077"
         },
         {
             "textId": "Self-deprecation",
             "label": "Self-deprecation",
-            "iconName": "selfDeprecation.png"
+            "iconName": "selfDeprecation.png",
+            "color": "#dada92"
         },
         {
             "textId": "Impatience",
             "label": "Impatience",
-            "iconName": "impatience.png"
+            "iconName": "impatience.png",
+            "color": "#e3e4ad"
         },
         {
             "textId": "Martyrdom",
             "label": "Martyrdom",
-            "iconName": "martyrdom.png"
+            "iconName": "martyrdom.png",
+            "color": "#ededc8"
         },
         {
             "textId": "Stubbornness",
             "label": "Stubbornness",
-            "iconName": "stubbornness.png"
+            "iconName": "stubbornness.png",
+            "color": "#f6f6e3"
         }
     ],
     "textId": "Laws",
@@ -68,7 +75,7 @@
         },
         {
             "textId": "Stubbornness",
-            "isLeaf": false 
+            "isLeaf": false
         }
     ]
 }

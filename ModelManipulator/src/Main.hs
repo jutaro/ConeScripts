@@ -122,6 +122,7 @@ inputConeTree fp = do
         Right model -> trace ("model color:" ++ show (ceColor (roseLeaf model))) $  return model
 
 outputConeTree :: FilePath -> ConeTree -> IO ()
-outputConeTree f coneTree = do
-    let newFilePath = replaceExtension f ".json"
-    BS.writeFile newFilePath (encode coneTree)
+outputConeTree f coneTree =
+    let coneTree' = applyColorSerialization ColAsWebcolor coneTree
+        newFilePath = replaceExtension f ".json"
+    in BS.writeFile newFilePath (encode coneTree')

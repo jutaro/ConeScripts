@@ -1,0 +1,125 @@
+{
+    "basePrefix": "video",
+    "entries": [
+        {
+            "textId": "Laws",
+            "label": ""
+        },
+        {
+            "textId": "Trichotomy",
+            "label": "",
+            "iconName": "triangle.png"
+        },
+        {
+            "textId": "Heptagramm",
+            "label": "",
+            "iconName": "heptagramm.png"
+        },
+        {
+            "textId": "Brahma",
+            "label": "Brahma",
+            "iconName": "brahma.png"
+        },
+        {
+            "textId": "Shiva",
+            "label": "Shiva",
+            "iconName": "shiva.png"
+        },
+        {
+            "textId": "Vishnu",
+            "label": "Vishnu",
+            "iconName": "vishnu.png"
+        },
+        {
+            "textId": "Slave",
+            "label": "Slave",
+            "iconName": "slave.png",
+            "isLeaf": false,
+            "color": [27,51,77]
+        },
+        {
+            "textId": "Artisan",
+            "label": "Artisan",
+            "iconName": "artisan.png",
+            "color": [36,68,104]
+        },
+        {
+            "textId": "Warrior",
+            "label": "Warrior",
+            "iconName": "warrior.png",
+            "color": [36,68,104]
+        },
+        {
+            "textId": "Scholar",
+            "label": "Scholar",
+            "iconName": "scholar.png",
+            "color": [54,104,160]
+        },
+        {
+            "textId": "Sage",
+            "label": "Sage",
+            "iconName": "sage.png",
+            "color": [62,121,188]
+        },
+        {
+            "textId": "Priest",
+            "label": "Priest",
+            "iconName": "priest.png",
+            "color": [86,140,200]
+        },
+        {
+            "textId": "King",
+            "label": "King",
+            "iconName": "king.png",
+            "color": [113,158,210]
+        }
+    ],
+    "textId": "Laws",
+    "children": [
+        {
+        "textId": "Trichotomy",
+        "children": [
+            {
+                "textId": "Brahma"
+            },
+            {
+                "textId": "Shiva"
+            },
+            {
+                "textId": "Vishnu"
+            }
+        ]},
+        {
+        "textId": "Heptagramm",
+        "children": [
+            {
+                "textId": "Sage",
+                "isLeaf": false
+            },
+            {
+                "textId": "Artisan",
+                "isLeaf": false
+            },
+            {
+                "textId": "Priest",
+                "isLeaf": false
+            },
+            {
+                "textId": "Slave",
+                "isLeaf": false
+            },
+            {
+                "textId": "King",
+                "isLeaf": false
+            },
+            {
+                "textId": "Warrior",
+                "isLeaf": false
+            },
+            {
+                "textId": "Scholar",
+                "isLeaf": false
+            }
+        ]}
+    ]
+}

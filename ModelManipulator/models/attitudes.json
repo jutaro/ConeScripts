@@ -1,0 +1,74 @@
+{
+    "basePrefix": "video",
+    "entries": [
+        {
+            "textId": "Attitudes"
+        },
+        {
+            "textId": "Idealist",
+            "label": "Idealist",
+            "iconName": "idealist.png"
+        },
+        {
+            "textId": "Skeptic",
+            "label": "Skeptic",
+            "iconName": "skeptic.png"
+        },
+        {
+            "textId": "Spiritualist",
+            "label": "Spiritualist",
+            "iconName": "spiritualist.png"
+        },
+        {
+            "textId": "Stoic",
+            "label": "Stoic",
+            "iconName": "stoic.png"
+        },
+        {
+            "textId": "Realist",
+            "label": "Realist",
+            "iconName": "realist.png"
+        },
+        {
+            "textId": "Cynic",
+            "label": "Cynic",
+            "iconName": "cynic.png"
+        },
+        {
+            "textId": "Pragmatist",
+            "label": "Pragmatist",
+            "iconName": "pragmatist.png"
+        }
+    ],
+    "textId": "Attitudes",
+    "children": [
+                                {
+                                    "textId": "Idealist",
+                                    "isLeaf": false
+                                },
+                                {
+                                    "textId": "Skeptic",
+                                    "isLeaf": false
+                                },
+                                {
+                                    "textId": "Spiritualist",
+                                    "isLeaf": false
+                                },
+                                {
+                                    "textId": "Stoic",
+                                    "isLeaf": false
+                                },
+                                {
+                                    "textId": "Realist",
+                                    "isLeaf": false
+                                },
+                                {
+                                    "textId": "Cynic",
+                                    "isLeaf": false
+                                },
+                                {
+                                    "textId": "Pragmatist",
+                                    "isLeaf": false
+                                }
+                            ]
+                        }

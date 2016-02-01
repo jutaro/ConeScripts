@@ -1,0 +1,37 @@
+{
+    "tag": "ConeEntry",
+    "children": [
+        {
+            "tag": "ConeEntry",
+            "children": [],
+            "iconName": "thesis.png",
+            "isLeaf": true,
+            "nodeId": 2,
+            "textId": "Thesis",
+            "label": "Thesis"
+        },
+        {
+            "tag": "ConeEntry",
+            "children": [],
+            "iconName": "denying.png",
+            "isLeaf": true,
+            "nodeId": 3,
+            "textId": "Denying",
+            "label": "Denying"
+        },
+        {
+            "tag": "ConeEntry",
+            "children": [],
+            "iconName": "reconciling.png",
+            "isLeaf": true,
+            "nodeId": 4,
+            "textId": "Reconciling",
+            "label": "Reconciling"
+        }
+    ],
+    "iconName": "triangle.png",
+    "isLeaf": false,
+    "nodeId": 1,
+    "textId": "Trichotomy",
+    "label": ""
+}

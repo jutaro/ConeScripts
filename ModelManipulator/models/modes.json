@@ -1,0 +1,73 @@
+{
+    "basePrefix": "video",
+    "entries": [
+        {
+            "textId": "Modes"
+        },
+        {
+            "textId": "Power",
+            "label": "Power",
+            "iconName": "power.png"
+        },
+        {
+            "textId": "Caution",
+            "label": "Caution",
+            "iconName": "caution.png"
+        },
+        {
+            "textId": "Passion",
+            "label": "Passion",
+            "iconName": "passion.png"
+        },
+        {
+            "textId": "Repression",
+            "label": "Repression",
+            "iconName": "repression.png"
+        },
+        {
+            "textId": "Aggression",
+            "label": "Aggression",
+            "iconName": "aggression.png"
+        },
+        {
+            "textId": "Perseverance",
+            "label": "Perseverance",
+            "iconName": "perseverance.png"
+        },
+        {
+            "textId": "Observation",
+            "label": "Observation",
+            "iconName": "observation.png"
+        }
+    ],
+    "textId": "Modes",
+    "children": [
+                        {
+                            "textId": "Power",
+                            "isLeaf": false
+                        },
+                        {
+                            "textId": "Caution",
+                            "isLeaf": false
+                        },
+                        {
+                            "textId": "Passion",
+                            "isLeaf": false
+                        },
+                        {
+                            "textId": "Repression",
+                            "isLeaf": false
+                        },
+                        {
+                            "textId": "Aggression",
+                            "isLeaf": false
+                        },
+                        {
+                            "textId": "Perseverance",
+                            "isLeaf": false
+                        },
+                        {
+                            "textId": "Observation",
+                            "isLeaf": false
+                        }
+                    ]}

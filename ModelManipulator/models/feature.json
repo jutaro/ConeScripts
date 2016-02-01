@@ -1,0 +1,74 @@
+{
+    "basePrefix": "video",
+    "entries": [
+        {
+            "textId": "Chief Features"
+        },
+        {
+            "textId": "Greed",
+            "label": "Greed",
+            "iconName": "greed.png"
+        },
+        {
+            "textId": "Self-destruction",
+            "label": "Self-destruction",
+            "iconName": "selfDestruction.png"
+        },
+        {
+            "textId": "Arrogance",
+            "label": "Arrogance",
+            "iconName": "arrogance.png"
+        },
+        {
+            "textId": "Self-deprecation",
+            "label": "Self-deprecation",
+            "iconName": "selfDeprecation.png"
+        },
+        {
+            "textId": "Impatience",
+            "label": "Impatience",
+            "iconName": "impatience.png"
+        },
+        {
+            "textId": "Martyrdom",
+            "label": "Martyrdom",
+            "iconName": "martyrdom.png"
+        },
+        {
+            "textId": "Stubbornness",
+            "label": "Stubbornness",
+            "iconName": "stubbornness.png"
+        }
+    ],
+    "textId": "Laws",
+    "children": [
+        {
+            "textId": "Greed",
+            "isLeaf": false
+        },
+        {
+            "textId": "Self-destruction",
+            "isLeaf": false
+        },
+        {
+            "textId": "Arrogance",
+            "isLeaf": false
+        },
+        {
+            "textId": "Self-deprecation",
+            "isLeaf": false
+        },
+        {
+            "textId": "Impatience",
+            "isLeaf": false
+        },
+        {
+            "textId": "Martyrdom",
+            "isLeaf": false
+        },
+        {
+            "textId": "Stubbornness",
+            "isLeaf": false 
+        }
+    ]
+}

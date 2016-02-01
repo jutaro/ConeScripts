@@ -1,0 +1,65 @@
+{
+    "basePrefix": "video",
+    "entries": [
+        {
+            "textId": "Cycles"
+        },
+        {
+            "textId": "Infant",
+            "label": "Infant",
+            "iconName": "infant.png"
+        },
+        {
+            "textId": "Baby",
+            "label": "Baby",
+            "iconName": "baby.png"
+        },
+        {
+            "textId": "Young",
+            "label": "Young",
+            "iconName": "young.png"
+        },
+        {
+            "textId": "Mature",
+            "label": "Mature",
+            "iconName": "mature.png"
+        },
+        {
+            "textId": "Old",
+            "label": "Old",
+            "iconName": "old.png"
+        },
+        {
+            "textId": "Transcendent",
+            "label": "Transcendent",
+            "iconName": "transcendent.png"
+        }
+    ],
+    "textId": "Cycles",
+    "children": [
+        {
+            "textId": "Infant",
+            "isLeaf": true
+        },
+        {
+            "textId": "Baby",
+            "isLeaf": true
+        },
+        {
+            "textId": "Young",
+            "isLeaf": true
+        },
+        {
+            "textId": "Mature",
+            "isLeaf": true
+        },
+        {
+            "textId": "Old",
+            "isLeaf": true
+        },
+        {
+            "textId": "Transcendent",
+            "isLeaf": true
+        }
+    ]
+}

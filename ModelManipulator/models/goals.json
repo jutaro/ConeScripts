@@ -1,0 +1,74 @@
+{
+    "basePrefix": "video",
+    "entries": [
+        {
+            "textId": "Goals",
+            "label": ""
+        },
+        {
+            "textId": "Acceptance",
+            "label": "Acceptance",
+            "iconName": "acceptance.png"
+        },
+        {
+            "textId": "Rejection",
+            "label": "Rejection",
+            "iconName": "rejection.png"
+        },
+        {
+            "textId": "Growth",
+            "label": "Growth",
+            "iconName": "growth.png"
+        },
+        {
+            "textId": "Retardation",
+            "label": "Retardation",
+            "iconName": "retardation.png"
+        },
+        {
+            "textId": "Dominance",
+            "label": "Dominance",
+            "iconName": "dominance.png"
+        },
+        {
+            "textId": "Submission",
+            "label": "Submission",
+            "iconName": "submission.png"
+        },
+        {
+            "textId": "Stagnation",
+            "label": "Stagnation",
+            "iconName": "stagnation.png"
+        }
+    ],
+    "textId": "Goals",
+    "children": [
+                {
+                    "textId": "Acceptance",
+                    "isLeaf": false
+                },
+                {
+                    "textId": "Rejection",
+                    "isLeaf": false
+                },
+                {
+                    "textId": "Growth",
+                    "isLeaf": false
+                },
+                {
+                    "textId": "Retardation",
+                    "isLeaf": false
+                },
+                {
+                    "textId": "Dominance",
+                    "isLeaf": false
+                },
+                {
+                    "textId": "Submission",
+                    "isLeaf": false
+                },
+                {
+                    "textId": "Stagnation",
+                    "isLeaf": false
+                }
+        ]}

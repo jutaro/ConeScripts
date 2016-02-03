@@ -51,31 +51,31 @@
     "children": [
         {
             "textId": "Greed",
-            "isLeaf": false
+            "isLeaf": true
         },
         {
             "textId": "Self-destruction",
-            "isLeaf": false
+            "isLeaf": true
         },
         {
             "textId": "Arrogance",
-            "isLeaf": false
+            "isLeaf": true
         },
         {
             "textId": "Self-deprecation",
-            "isLeaf": false
+            "isLeaf": true
         },
         {
             "textId": "Impatience",
-            "isLeaf": false
+            "isLeaf": true
         },
         {
             "textId": "Martyrdom",
-            "isLeaf": false
+            "isLeaf": true
         },
         {
             "textId": "Stubbornness",
-            "isLeaf": false
+            "isLeaf": true
         }
     ]
 }

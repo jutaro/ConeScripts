@@ -1,0 +1,82 @@
+{
+    "basePrefix": "base",
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Dashboards",
+                                    "label": "Dashboards"
+                                },
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Analytics",
+                                    "label": "Analytics"
+                                },
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Reporting",
+                                    "label": "Reporting"
+                                },
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Trends",
+                                    "label": "Trends"
+                                },
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_BPM",
+                                    "label": "BPM"
+                                },
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Operations",
+                                    "label": "Operations"
+                                },
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Logistics",
+                                    "label": "Logistics"
+                                }
+                            ],
+                            "isLeaf": false,
+                            "textId": "tId_Productivity",
+                            "label": "Productivity"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": true,
+                            "textId": "tId_Facilities",
+                            "label": "Facilities"
+                        }
+                    ],
+                    "isLeaf": false,
+                    "textId": "tId_Management",
+                    "label": "Management"
+                }
+            ],
+            "isLeaf": false,
+            "textId": "tId_Financial",
+            "label": "Financial"
+        }
+    ],
+    "baseColors": [
+        "#4532A2",
+        "#222222"
+    ],
+    "iconName": "080975-glossy-silver-icon-business-computer-desktop1.png",
+    "isLeaf": false,
+    "textId": "tId_Business Needs",
+    "label": "Business Needs"
+}

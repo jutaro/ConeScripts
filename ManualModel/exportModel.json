@@ -4,6 +4,129 @@
         {
             "children": [
                 {
+                    "children": [],
+                    "isLeaf": false,
+                    "textId": "tId_Health & Safety",
+                    "label": "Health & Safety"
+                },
+                {
+                    "children": [],
+                    "isLeaf": false,
+                    "textId": "tId_Accouting",
+                    "label": "Accouting"
+                },
+                {
+                    "children": [],
+                    "isLeaf": false,
+                    "textId": "tId_Human Resources",
+                    "label": "Human Resources"
+                },
+                {
+                    "children": [],
+                    "isLeaf": false,
+                    "textId": "tId_Insurance",
+                    "label": "Insurance"
+                }
+            ],
+            "isLeaf": false,
+            "textId": "tId_Legal",
+            "label": "Legal"
+        },
+        {
+            "children": [
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Skills",
+                            "label": "Skills"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Staff",
+                            "label": "Staff"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Raw Materials",
+                            "label": "Raw Materials"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Suppliers",
+                            "label": "Suppliers"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Innovation",
+                            "label": "Innovation"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Potential",
+                            "label": "Potential"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Competitiveness",
+                            "label": "Competitiveness"
+                        }
+                    ],
+                    "isLeaf": false,
+                    "textId": "tId_Product",
+                    "label": "Product"
+                },
+                {
+                    "children": [
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Distribution",
+                            "label": "Distribution"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Processing",
+                            "label": "Processing"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Customer Service",
+                            "label": "Customer Service"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Selling",
+                            "label": "Selling"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Marketing",
+                            "label": "Marketing"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Market Research",
+                            "label": "Market Research"
+                        }
+                    ],
+                    "isLeaf": false,
+                    "textId": "tId_Sales",
+                    "label": "Sales"
+                },
+                {
                     "children": [
                         {
                             "children": [
@@ -56,9 +179,52 @@
                         },
                         {
                             "children": [],
-                            "isLeaf": true,
+                            "isLeaf": false,
                             "textId": "tId_Facilities",
                             "label": "Facilities"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Location",
+                            "label": "Location"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Licensing",
+                            "label": "Licensing"
+                        },
+                        {
+                            "children": [],
+                            "isLeaf": false,
+                            "textId": "tId_Software",
+                            "label": "Software"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Training",
+                                    "label": "Training"
+                                },
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Recruitment",
+                                    "label": "Recruitment"
+                                },
+                                {
+                                    "children": [],
+                                    "isLeaf": false,
+                                    "textId": "tId_Communication",
+                                    "label": "Communication"
+                                }
+                            ],
+                            "isLeaf": false,
+                            "textId": "tId_Human Resources",
+                            "label": "Human Resources"
                         }
                     ],
                     "isLeaf": false,
@@ -69,14 +235,37 @@
             "isLeaf": false,
             "textId": "tId_Financial",
             "label": "Financial"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Infrastructure",
+            "label": "Infrastructure"
         }
     ],
     "baseColors": [
-        "#4532A2",
-        "#222222"
+        "#273f61",
+        "#325765",
+        "#4d818c"
     ],
-    "iconName": "080975-glossy-silver-icon-business-computer-desktop1.png",
     "isLeaf": false,
+    "baseColorModifiers": [
+        [
+            0.95,
+            0.95,
+            0.95
+        ],
+        [
+            0.85,
+            0.85,
+            0.85
+        ],
+        [
+            0.8,
+            0.8,
+            0.8
+        ]
+    ],
     "textId": "tId_Business Needs",
     "label": "Business Needs"
 }

@@ -13,7 +13,7 @@ executable RDFImporter
   main-is:             Main.hs
 
   -- Modules included in this executable, other than Main.
-  -- other-modules:
+  other-modules:     IconGuesser Parser.CSV
 
   -- LANGUAGE extensions used by modules in this package.
   -- other-extensions:
@@ -27,7 +27,8 @@ executable RDFImporter
                     bytestring >=0.10,
                     text >= 1.2.2.0,
                     aeson-pretty >= 0.7.2,
-                    directory
+                    directory,
+                    parsec 
 
   hs-source-dirs:      src
 

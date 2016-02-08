@@ -32,6 +32,8 @@ import qualified Data.ByteString.Lazy as BS(writeFile)
 
 import ConeServer.Types
 import ConeServer.ConeTypes
+import Parser.CSV
+import CSV
 
 -- import Data.Aeson
 import Data.Aeson.Encode.Pretty (encodePretty)
@@ -41,6 +43,7 @@ encode = encodePretty
 data Flag =  LanguageCode String
              | RootId String
              | IconDir FilePath
+             | CSV
              | Version
              | Help
        deriving (Show,Eq)
@@ -53,6 +56,8 @@ options =   [
            "Pass the desired language code"
         ,   Option ['i'] ["icons"] (ReqArg IconDir "Icon directory")
               "Pass a directory containing icons / textures"
+        ,   Option ['c'] ["csv"] (NoArg CSV)
+              "Import from csv"
         ,   Option ['v'] ["version"] (NoArg Version)
                "Show the version number"
         ,   Option ['h'] ["help"] (NoArg Help)
@@ -73,31 +78,43 @@ main = do
     (o,files)        <- getOpts args
     trace "123" $ return ()
     let condIconDir  =  foldr (\x y -> case x of IconDir d -> Just d; _ -> y) Nothing o
-    let lang         =  case (filter (\x -> case x of
+    let lang         =  case filter (\x -> case x of
                                         LanguageCode p -> True
-                                        _           -> False)) o of
-                            []              -> "en"
-                            (LanguageCode p):_ -> p
-    let root         =  case (filter (\x -> case x of
-                                        RootId _ -> True
-                                        _        -> False)) o of
-                            []           -> UNode (pack "http://www.w3.org/2002/07/owl#Thing")
-                            (RootId r):_ -> UNode (pack r)
-    if elem Version o
+                                        _           -> False) o of
+                            []                -> "en"
+                            LanguageCode p :_ -> p
+    if Version `elem` o
         then putStrLn $ "RDFImporter, version " ++ showVersion version
-        else if elem Help o
+        else if Help `elem` o
             then putStrLn $ usageInfo header options
-            else do
-                case files of
-                    (f : _) -> do
-                            iconGuesser <- newIconGuesser condIconDir
-                            triples <- parseTripes f
-                            let
-                                coneTree = processTriples triples lang root
-                                coneTree' = applyIconGuesser iconGuesser coneTree
-                            outputConeTree f coneTree'
-                    _ -> do
-                            putStrLn $ usageInfo header options
+            else if CSV `elem` o
+                then case files of
+                        (f : _) -> do
+                                eitherErrCSV <- parseCSVFromFile f
+                                case eitherErrCSV of
+                                    Left parseError -> do
+                                        putStrLn $ "Parse error: " ++ show parseError
+                                        exitFailure
+                                    Right csv ->
+                                        let coneTree = processCSV csv
+                                        in outputConeTree f coneTree
+                                return ()
+                        _ -> putStrLn $ usageInfo header options
+                else
+                    case files of
+                        (f : _) -> do
+                                let root         =  case filter (\x -> case x of
+                                                                    RootId _ -> True
+                                                                    _        -> False) o of
+                                                        []           -> UNode (pack "http://www.w3.org/2002/07/owl#Thing")
+                                                        RootId r:_ -> UNode (pack r)
+                                iconGuesser <- newIconGuesser condIconDir
+                                triples <- parseTripes f
+                                let
+                                    coneTree = processTriples triples lang root
+                                    coneTree' = applyIconGuesser iconGuesser coneTree
+                                outputConeTree f coneTree'
+                        _ -> putStrLn $ usageInfo header options
 
 parseTripes :: FilePath -> IO HashMapS
 parseTripes fn =
@@ -127,19 +144,18 @@ processTriples :: HashMapS -> String -> Node -> ConeTree
 processTriples triples lang root =
     let allClasses    = map subjectOf $
                             query triples Nothing (Just (UNode typeUri)) (Just (UNode classUri))
-        allClassNodes = if elem root allClasses
+        allClassNodes = if root `elem` allClasses
                             then allClasses
                             else root : allClasses
-        -- classEntries  = map (makeClassEntry triples lang) allClassNodes
-        -- classesWithoutSuperclasses = filter (hasNoSuperclass triples) allClassNodes
-        -- datatypeProperties = map subjectOf $
-        --                         query triples Nothing (Just (UNode typeUri)) (Just (UNode datatypePropertyUri))
-        -- objectProperties = map subjectOf $
-        --                         query triples Nothing (Just (UNode typeUri)) (Just (UNode objectPropertyUri))
-        -- properties = datatypeProperties ++ objectProperties
-        -- propertyEntries = map (makePropertyEntry triples lang) properties
-        -- coneTree      = buildTreeFrom root triples allClassNodes classEntries propertyEntries
-        coneTree = emptyTree
+        classEntries  = map (makeClassEntry triples lang) allClassNodes
+        classesWithoutSuperclasses = filter (hasNoSuperclass triples) allClassNodes
+        datatypeProperties = map subjectOf $
+                                query triples Nothing (Just (UNode typeUri)) (Just (UNode datatypePropertyUri))
+        objectProperties = map subjectOf $
+                                query triples Nothing (Just (UNode typeUri)) (Just (UNode objectPropertyUri))
+        properties = datatypeProperties ++ objectProperties
+        propertyEntries = map (makePropertyEntry triples lang) properties
+        coneTree      = buildTreeFrom root triples allClassNodes classEntries propertyEntries
     in trace ("Found " ++ show (length allClasses) ++ " classes.")
 --       $ trace ("Made entries " ++ show (length classEntries)) $
 --       $ trace ("Classes without super " ++ show classesWithoutSuperclasses) $
@@ -270,13 +286,13 @@ getForLanguage lang nodes =
 selectLabel :: [Node] -> String -> Node -> Text
 selectLabel [] lang classNode = pack $ show classNode
 selectLabel labels lang classNode =
-    case getForLanguage lang labels of
-        Just str -> str
-        Nothing -> case filter filterFunc2 labels of
-                        ((LNode (PlainL str)) : _) -> str
-                        _ -> case filter filterFunc3 labels of
-                                ((LNode (PlainLL str _)) : _) -> str
-                                _ -> pack $ show classNode
+    fromMaybe
+      (case filter filterFunc2 labels of
+           LNode (PlainL str) : _ -> str
+           _ -> case filter filterFunc3 labels of
+                    LNode (PlainLL str _) : _ -> str
+                    _ -> pack $ show classNode)
+      (getForLanguage lang labels)
   where
    -- Find other comment
     filterFunc2 n = case n of

@@ -1,5 +1,5 @@
 
-module PeopleZoo where
+module  PeopleZoo (spawnPerson) where
 
 import  ConeServer.ConeTypes    (ConeEntry(..), emptyLeaf)
 import  System.Random           (randomRIO)

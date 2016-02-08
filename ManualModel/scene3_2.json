@@ -1,0 +1,70 @@
+{
+    "basePrefix": "people",
+    "children": [
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Ellen DeBaldo",
+            "label": "Ellen DeBaldo"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Patricia Evans",
+            "label": "Patricia Evans"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Karen Swanson",
+            "label": "Karen Swanson"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Charles Young",
+            "label": "Charles Young"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Barbara Schultz",
+            "label": "Barbara Schultz"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Michael Turner",
+            "label": "Michael Turner"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Michael Carmack",
+            "label": "Michael Carmack"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Charles Brooks",
+            "label": "Charles Brooks"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Michael Patel",
+            "label": "Michael Patel"
+        },
+        {
+            "children": [],
+            "isLeaf": false,
+            "textId": "tId_Karen Allen",
+            "label": "Karen Allen"
+        }
+    ],
+    "baseColors": null,
+    "isLeaf": false,
+    "baseColorModifiers": null,
+    "textId": "tId_Deparment",
+    "label": "Deparment"
+}

@@ -50,24 +50,28 @@
                         },
                         {
                             "children": [],
+                            "iconName": "staff.png",
                             "isLeaf": false,
                             "textId": "tId_Staff",
                             "label": "Staff"
                         },
                         {
                             "children": [],
+                            "iconName": "raw materials.png",
                             "isLeaf": false,
                             "textId": "tId_Raw Materials",
                             "label": "Raw Materials"
                         },
                         {
                             "children": [],
+                            "iconName": "suppliers.png",
                             "isLeaf": false,
                             "textId": "tId_Suppliers",
                             "label": "Suppliers"
                         },
                         {
                             "children": [],
+                            "iconName": "innovation.png",
                             "isLeaf": false,
                             "textId": "tId_Innovation",
                             "label": "Innovation"

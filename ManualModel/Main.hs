@@ -1,6 +1,7 @@
 {-# LANGUAGE OverloadedStrings, RecordWildCards #-}
 
 import IconGuesser
+import PeopleZoo
 
 import ConeServer.ConeTypes
 import ConeServer.Types
@@ -66,15 +67,24 @@ main = do
             ["-i", iconDir] -> Just iconDir
             _               -> Nothing
     iconGuesser <- newIconGuesser mIconPath
+
     let
-        coneDemo = ConeDemo
-            "base"
+        coneDemo = ConeDemo "base"
             (Just ["#273f61", "#325765", "#4d818c"])
-            (Just [[0.95, 0.95, 0.95], [0.85, 0.85, 0.85], [0.8, 0.8, 0.8]])
+            -- (Just [[0.95, 0.95, 0.95], [0.85, 0.85, 0.85], [0.8, 0.8, 0.8]])
+            Nothing
             (applyIconGuesser iconGuesser root)
 
-    B.writeFile "exportModel.json" $ encodePretty $ coneDemo
+    B.writeFile "scene3_1.json" $ encodePretty $ coneDemo
 
+    zoo <- replicateM 10 $ spawnPerson (-1)
+    let
+        pplRoot = node (entry "Deparment") $ leaves True zoo
+        pplZoo = ConeDemo "people"
+            Nothing
+            Nothing
+            pplRoot
+    B.writeFile "scene3_2.json" $ encodePretty pplZoo
 
 
 -- MANUAL DEFINITION
@@ -84,7 +94,7 @@ root = node (entry "Business Needs") [legal, financial, infrastructure]
 
 
 legal = node (entry "Legal") $ leaves True $ map entry
-    ["Health & Safety", "Accouting", "Human Resources", "Insurance"]
+    ["Health & Safety", "Accounting", "Human Resources", "Insurance"]
 
 
 financial = node (entry "Financial") [prod, sales, management]

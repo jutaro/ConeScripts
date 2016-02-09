@@ -13,6 +13,7 @@ import  qualified Data.Text         as T
 import  System.Directory
 import  Control.Monad               (forM)
 import  Control.Arrow               (first)
+import  Control.Applicative         ((<|>))
 import  Data.Char                   (isAlpha, isPunctuation)
 import  Data.List                   (maximumBy, isSuffixOf, intersect, sortBy)
 import  Data.Ord                    (comparing)
@@ -66,7 +67,7 @@ applyIconGuesser :: IconGuesser -> ConeTree -> ConeTree
 applyIconGuesser IconGuesser {guessIcon = guessIcon} =
     fmap modifyEntry
   where
-    modifyEntry e = e {ceIconName = guessIcon e}
+    modifyEntry e = e {ceIconName = ceIconName e <|> guessIcon e}
 
 
 loadRecursive' :: FilePath -> IO TagDict
@@ -77,18 +78,18 @@ loadRecursive' dir = do
     xs <- forM files $ \file -> do
         isDir <- doesDirectoryExist file
         if isDir then loadRecursive' file else let f' = T.pack file in return
-            [(extractTags $ normalizeFName f', f') | any (`isSuffixOf` file) extensions]
+            [(extractTags $ dropSuff f', f') | any (`isSuffixOf` file) extensions]
     setCurrentDirectory dir_
     length xs `seq` return (concat xs)
   where
-    extensions      = [".png", ".PNG"]
-    normalizeFName  = T.toLower . T.takeWhile (/= '.')
+    extensions  = [".png", ".PNG"]
+    dropSuff    = T.takeWhile (/= '.')
 
 
 extractTags :: T.Text -> TagSet
 extractTags fName =
     filter (\t -> T.length t > 2 && t `notElem` stopWords)
-    . map (T.filter isAlpha)
+    . map (T.toLower . T.filter isAlpha)
     . concatMap (T.split isPunctuation)
     $ longestSplit
   where

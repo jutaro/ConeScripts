@@ -13,7 +13,7 @@
 --
 -----------------------------------------------------------------------------
 
-module Main (
+module MainRDF (
     main
 ) where
 
@@ -35,9 +35,7 @@ import ConeServer.ConeTypes
 import Parser.CSV
 import CSV
 
--- import Data.Aeson
 import Data.Aeson.Encode.Pretty (encodePretty)
-encode = encodePretty
 
 
 data Flag =  LanguageCode String
@@ -129,7 +127,7 @@ parseTripes fn =
 outputConeTree :: FilePath -> ConeTree -> IO ()
 outputConeTree f coneTree = do
     let newFilePath = replaceExtension f ".json"
-    BS.writeFile newFilePath (encode coneTree)
+    BS.writeFile newFilePath (encodePretty coneTree)
 
 typeUri = pack "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
 classUri = pack "http://www.w3.org/2002/07/owl#Class"
@@ -268,7 +266,7 @@ makeRoseLeaf :: ConeEntry -> ConeTree
 makeRoseLeaf entry =
     RoseLeaf
         { roseLeaf      = entry
-        , roseMeta      = 0
+        , roseMeta      = -1
         , roseChildren  = []
         }
 

@@ -18,6 +18,7 @@ module MainRDF (
 ) where
 
 import IconGuesser
+import ConeDemo (fromConeTree)
 
 import System.Console.GetOpt
 import System.Environment
@@ -127,7 +128,7 @@ parseTripes fn =
 outputConeTree :: FilePath -> ConeTree -> IO ()
 outputConeTree f coneTree = do
     let newFilePath = replaceExtension f ".json"
-    BS.writeFile newFilePath (encodePretty coneTree)
+    BS.writeFile newFilePath (encodePretty $ fromConeTree coneTree)
 
 typeUri = pack "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
 classUri = pack "http://www.w3.org/2002/07/owl#Class"

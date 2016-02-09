@@ -2,6 +2,7 @@
 
 import IconGuesser
 import PeopleZoo
+import ConeDemo
 
 import ConeServer.ConeTypes
 import ConeServer.Types
@@ -10,44 +11,12 @@ import Data.Aeson
 import Data.Aeson.Types
 import Data.Aeson.Encode.Pretty         (encodePretty)
 import qualified Data.ByteString.Lazy   as B (writeFile)
-import qualified Data.HashMap.Lazy      as HM (union, delete, map)
-import qualified Data.Vector            as V (map)
 import Data.Text                        (Text, append)
 import System.Random                    (randomRIO)
 import System.Environment
 import Debug.Trace
 
 
-data ConeDemo = ConeDemo
-    { basePrefix        :: String
-    , baseColorsWeb     :: Maybe [String]
-    , baseModifiers     :: Maybe [[Float]]
-    , theTree           :: ConeTree
-    }
-
-
-instance ToJSON ConeDemo where
-    toJSON ConeDemo {..} =
-        let
-            ~(Object o1) = cleanup $ toJSON theTree
-            ~(Object o2) = object
-                [ "basePrefix"          .= basePrefix
-                , "baseColors"          .= baseColorsWeb
-                , "baseColorModifiers"  .= baseModifiers
-                ]
-        in Object $ o2 `HM.union` o1
-
-
--- HELPERS
-
-cleanup :: Value -> Value
-cleanup (Array arr) = Array $ V.map cleanup arr
-cleanup (Object o)  = Object $ HM.map cleanup $ foldr HM.delete o ["tag", "nodeId"]
-cleanup v           = v
-
-injectAttribs :: Text -> Value -> Value
-injectAttribs key (Array arr) = Array $ V.map (injectAttribs key) arr
-injectAttribs _ v = v
 
 entry :: Text -> ConeEntry
 entry t = emptyLeaf {ceLabel = t, ceTextId = "tId_" `append` t}
@@ -80,7 +49,7 @@ main = do
             Nothing
             (applyIconGuesser iconGuesser root1)
 
-    B.writeFile "scene3_1.json" $ encodePretty $ coneDemo
+    B.writeFile "testData/scene3_1.json" $ encodePretty $ coneDemo
 
     pplRoot <- buildRoot
     let
@@ -88,7 +57,7 @@ main = do
             Nothing
             (Just [[0.96, 0.96, 0.96]])
             (applyColorSerialization ColAsWebcolor pplRoot)
-    B.writeFile "scene3_2.json" $ encodePretty $ pplZoo
+    B.writeFile "testData/scene3_2.json" $ encodePretty $ pplZoo
 
 
 --

@@ -18,16 +18,6 @@ import Debug.Trace
 
 
 
-entry :: Text -> ConeEntry
-entry t = emptyLeaf {ceLabel = t, ceTextId = "tId_" `append` t}
-
-leaves :: Bool -> [ConeEntry] -> [ConeTree]
-leaves asCones = map (flip node [] . (\e -> e {ceIsLeaf = not asCones}))
-
-node :: ConeEntry -> [ConeTree] -> ConeTree
-node e [] = RoseLeaf e {ceIsLeaf = ceIsLeaf e && True} (-1) []
-node e cs = RoseLeaf e {ceIsLeaf = False} (-1) cs
-
 coneNodes :: [ConeTree] -> [ConeTree]
 coneNodes = map (\(RoseLeaf a b cs) -> RoseLeaf a {ceIsLeaf = False} b cs)
 

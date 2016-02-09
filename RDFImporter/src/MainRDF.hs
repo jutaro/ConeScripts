@@ -13,10 +13,6 @@
 --
 -----------------------------------------------------------------------------
 
-module MainRDF (
-    main
-) where
-
 import IconGuesser
 import ConeDemo (fromConeTree)
 

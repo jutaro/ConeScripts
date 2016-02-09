@@ -53,6 +53,7 @@ executable CSVImporter
                       bytestring >=0.10,
                       text >= 1.2.2.0,
                       aeson-pretty >= 0.7.2,
+                      containers,
                       unordered-containers,
                       vector,
                       directory,
@@ -78,7 +79,7 @@ executable ManualModel
                         vector,
                         directory,
                         random
-                        
+
       hs-source-dirs:      src
 
 

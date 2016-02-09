@@ -82,8 +82,8 @@ loadRecursive' dir = do
     setCurrentDirectory dir_
     length xs `seq` return (concat xs)
   where
-    extensions  = [".png", ".PNG"]
-    dropSuff    = T.takeWhile (/= '.')
+    extensions  = [".png", ".PNG", ".jpg", ".JPG"]
+    dropSuff    = T.dropEnd 4
 
 
 extractTags :: T.Text -> TagSet

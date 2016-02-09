@@ -13,6 +13,7 @@ import qualified Data.ByteString.Lazy   as B (writeFile)
 import qualified Data.HashMap.Lazy      as HM (union, delete, map)
 import qualified Data.Vector            as V (map)
 import Data.Text                        (Text, append)
+import System.Random                    (randomRIO)
 import System.Environment
 import Debug.Trace
 
@@ -44,6 +45,10 @@ cleanup (Array arr) = Array $ V.map cleanup arr
 cleanup (Object o)  = Object $ HM.map cleanup $ foldr HM.delete o ["tag", "nodeId"]
 cleanup v           = v
 
+injectAttribs :: Text -> Value -> Value
+injectAttribs key (Array arr) = Array $ V.map (injectAttribs key) arr
+injectAttribs _ v = v
+
 entry :: Text -> ConeEntry
 entry t = emptyLeaf {ceLabel = t, ceTextId = "tId_" `append` t}
 
@@ -73,24 +78,25 @@ main = do
             (Just ["#273f61", "#325765", "#4d818c"])
             -- (Just [[0.95, 0.95, 0.95], [0.85, 0.85, 0.85], [0.8, 0.8, 0.8]])
             Nothing
-            (applyIconGuesser iconGuesser root)
+            (applyIconGuesser iconGuesser root1)
 
     B.writeFile "scene3_1.json" $ encodePretty $ coneDemo
 
-    zoo <- replicateM 10 $ spawnPerson (-1)
+    pplRoot <- buildRoot
     let
-        pplRoot = node (entry "Deparment") $ leaves True zoo
         pplZoo = ConeDemo "people"
             Nothing
-            Nothing
-            pplRoot
-    B.writeFile "scene3_2.json" $ encodePretty pplZoo
+            (Just [[0.96, 0.96, 0.96]])
+            (applyColorSerialization ColAsWebcolor pplRoot)
+    B.writeFile "scene3_2.json" $ encodePretty $ pplZoo
 
 
--- MANUAL DEFINITION
+--
+-- Scene3_1
+--
 
-root :: ConeTree
-root = node (entry "Business Needs") [legal, financial, infrastructure]
+root1 :: ConeTree
+root1 = node (entry "Business Needs") [legal, financial, infrastructure]
 
 
 legal = node (entry "Legal") $ leaves True $ map entry
@@ -127,8 +133,28 @@ sales = node (entry "Sales") $ leaves True $ map entry
 prod = node (entry "Product") $ leaves True $ map entry
     ["Skills", "Staff", "Raw Materials", "Suppliers", "Innovation", "Potential", "Competitiveness"]
 
-
-
-
-
 infrastructure = node (entry "Infrastructure") []
+
+
+
+
+--
+-- Scene3_2
+--
+
+buildRoot :: IO ConeTree
+buildRoot = do
+    [dep1, dep2, dep3, dep4] <- leaves True <$> replicateM 4 (spawnPerson 1)
+    dep1'   <- (node (entry "IT") . (:[]))          <$> populateZoo 1 [(4,5), (7,10)] dep1
+    dep2'   <- (node (entry "Management") . (:[]))  <$> populateZoo 1 [(2,3), (4,5)] dep2
+    dep3'   <- (node (entry "Marketing") . (:[]))   <$> populateZoo 1 [(2,4), (12,14)] dep3
+    dep4'   <- (node (entry "Financial") . (:[]))   <$> populateZoo 1 [(3,4), (5,8)] dep4
+    return  $ node (entry "Deparments") [dep1', dep2', dep3', dep4']
+
+
+populateZoo :: Int -> [(Int, Int)] -> ConeTree -> IO ConeTree
+populateZoo level (lim:lims) (RoseLeaf e x _) = do
+    count   <- randomRIO lim
+    ppl     <- leaves True <$> replicateM count (spawnPerson level)
+    cs      <- if null lims then return ppl else mapM (populateZoo (level-1) lims) ppl
+    return  $ RoseLeaf e {ceIsLeaf = False} x cs

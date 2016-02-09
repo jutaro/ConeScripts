@@ -1,7 +1,8 @@
-
+{-# LANGUAGE OverloadedStrings #-}
 module  PeopleZoo (spawnPerson) where
 
-import  ConeServer.ConeTypes    (ConeEntry(..), emptyLeaf)
+import  ConeServer.ConeTypes    (ConeEntry(..), emptyLeaf, ConeColor)
+import  Data.Aeson              (decode)
 import  System.Random           (randomRIO)
 import  Data.Text               (append, pack)
 import  Data.Bool               (bool)
@@ -22,7 +23,9 @@ femaleNames =
     [ "Patricia", "Linda", "Barbara", "Liz", "Jenny"
     , "Maria", "Susan", "Margaret", "Dorothy", "Lisa"
     , "Ellen", "Laura", "Kimberley", "Megan"
-    , "Nancy", "Karen", "Ayla"
+    , "Nancy", "Karen", "Ayla", "Emily", "Hannah"
+    , "Ava", "Alexis", "Sarah", "Rachel", "Jessica"
+    , "Julia", "Lilian", "Nicole", "Madeline"
     ]
 
 maleNames =
@@ -30,6 +33,9 @@ maleNames =
     , "David", "Richard", "Charles", "Joseph"
     , "Jürgen", "Govinda", "Yaw", "Michael", "Juri"
     , "Tom", "Chris", "Daniel", "Paul", "Ron"
+    , "Patrick", "Jonathan", "Miles", "Benjamin"
+    , "Keith", "Gerald", "Ralph", "Nicolas"
+    , "Ryan", "Steve", "Aaron", "Craig", "Philip"
     ]
 
 familyNames_ =
@@ -38,7 +44,10 @@ familyNames_ =
     , "Young", "Allen", "Campbell", "Turner", "Roberts", "Murphy"
     , "Cruz", "Schultz", "Evans", "Torres", "Kelly", "Brooks", "Freeman"
     , "Olson", "Romero", "Carmack", "Patel", "Andrews", "Harper", "Bishop"
-    , "Goldstein", "Lambert"
+    , "Goldstein", "Lambert", "Stewart", "O'Brien", "Gagnon", "Brown"
+    , "Tremblay", "Bouchard", "Leblanc", "Flores", "Lee", "King", "Baker"
+    , "Green", "Peterson", "Jenkins", "Fisher", "Bennett", "Reed", "Cooper"
+    , "Nguyen", "Wright"
     ]
 
 familyNames :: IORef [String]
@@ -63,4 +72,11 @@ spawnPerson level = do
         { ceLabel       = t
         , ceTextId      = pack "tId_" `append` t
         , ceIconName    = bool Nothing (Just i) (level >= 0)
+        , ceColor       = bool colFemale colMale isMale
         }
+
+colMale :: Maybe ConeColor
+colMale = decode "\"#ac9acc\""
+
+colFemale :: Maybe ConeColor
+colFemale = decode "\"#a36b98\""

@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, LambdaCase #-}
 
 import ConeServer.Types
 import ConeServer.ConeTypes
@@ -38,14 +38,18 @@ buildFromCSV fName csv_@(header:_) =
     parents :: M.HashMap Text Int
     parents = M.fromList . flip zip [0..] . map (T.pack . (!! 0)) $ csv
 
-    rows    = map (\(par:name:_) -> (parents M.! T.pack par, T.pack name)) csv
     grouped = groupByKey rows
+    rows    = flip map csv $ \case
+        [par, name]     -> (parents M.! T.pack par, (T.pack name, Nothing))
+        par:name:uri:_  -> (parents M.! T.pack par, (T.pack name, if "http" `isPrefixOf` uri then Just (T.pack uri) else Nothing))
 
     attach e @ ConeEntry {ceLabel = label} =
         RoseLeaf e {ceIsLeaf = null children} (-1) $
-            map (attach . entry) children
+            map (attach . entryWithUri) children
       where
         children = fromMaybe [] (M.lookup label parents >>= flip lookup grouped)
+
+    entryWithUri (label, uri) = (entry label) {ceTargetUri = uri}
 
 
 main :: IO ()

@@ -1,6 +1,6 @@
-name:                RDFImporter
+name:                Importer
 version:             0.1.0.0
-synopsis:            RDF Importer for ConeServer
+synopsis:            Various Importers Importer for ConeServer
 homepage:            https://github.com/jutaro
 license:             AllRightsReserved
 author:              jutaro
@@ -84,3 +84,27 @@ executable ManualModel
 
 
       default-language:    Haskell2010
+
+
+
+executable RevealImporter
+    main-is:           MainReveal.hs
+
+    other-modules:     IconGuesser Parser.CSV
+
+    ghc-options:      -O2
+
+    build-depends:    base >=4.8 && <4.9,
+                      ConeServer >= 0.0.2,
+                      aeson >=0.8 && <0.10,
+                      aeson-pretty >= 0.7.2,
+                      bytestring >=0.10,
+                      text >= 1.2.2.0,
+                      tagsoup >= 0.13.8,
+                      unordered-containers,
+                      vector,
+                      directory
+
+    hs-source-dirs:      src
+
+    default-language:    Haskell2010

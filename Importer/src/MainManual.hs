@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, RecordWildCards #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 import IconGuesser
 import PeopleZoo
@@ -37,17 +37,19 @@ main = do
             (Just ["#273f61", "#325765", "#4d818c"])
             -- (Just [[0.95, 0.95, 0.95], [0.85, 0.85, 0.85], [0.8, 0.8, 0.8]])
             Nothing
+            False
             (applyIconGuesser iconGuesser root1)
 
-    B.writeFile "testData/scene3_1.json" $ encodePretty $ coneDemo
+    B.writeFile "testData/scene3_1.json" $ encodePretty coneDemo
 
     pplRoot <- buildRoot
     let
         pplZoo = ConeDemo "people"
             Nothing
             (Just [[0.96, 0.96, 0.96]])
+            False
             (applyColorSerialization ColAsWebcolor pplRoot)
-    B.writeFile "testData/scene3_2.json" $ encodePretty $ pplZoo
+    B.writeFile "testData/scene3_2.json" $ encodePretty pplZoo
 
 
 --

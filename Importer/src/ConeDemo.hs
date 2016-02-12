@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings, RecordWildCards #-}
+{-# LANGUAGE OverloadedStrings, RecordWildCards, LambdaCase #-}
 
 module ConeDemo (ConeDemo(..), fromConeTree, entry, node, leaves) where
 
@@ -14,16 +14,18 @@ data ConeDemo = ConeDemo
     { basePrefix        :: String
     , baseColorsWeb     :: Maybe [String]
     , baseModifiers     :: Maybe [[Float]]
+    , withNodeIds       :: Bool
     , theTree           :: ConeTree
     }
 
 fromConeTree :: ConeTree -> ConeDemo
-fromConeTree = ConeDemo "prefix" Nothing Nothing
+fromConeTree = ConeDemo "prefix" Nothing Nothing False
 
 instance ToJSON ConeDemo where
     toJSON ConeDemo {..} =
         let
-            ~(Object o1) = cleanup $ toJSON theTree
+            ~(Object o1) = cleanup withNodeIds $ toJSON $
+                if withNodeIds then enumerateTree coneEntrySetId 1 theTree else theTree
             ~(Object o2) = object
                 [ "basePrefix"          .= basePrefix
                 , "baseColors"          .= baseColorsWeb
@@ -34,10 +36,15 @@ instance ToJSON ConeDemo where
 
 -- HELPERS
 
-cleanup :: Value -> Value
-cleanup (Array arr) = Array $ V.map cleanup arr
-cleanup (Object o)  = Object $ HM.map cleanup $ foldr HM.delete o ["tag", "nodeId"]
-cleanup v           = v
+cleanup :: Bool -> Value -> Value
+cleanup keepNodeId = \case
+    Array arr   -> Array $ V.map (cleanup keepNodeId) arr
+    Object o    -> Object $ HM.map (cleanup keepNodeId) $ foldr HM.delete o killAttribs
+    v           -> v
+  where
+    killAttribs =
+        let attrs = ["nodeId", "tag"]
+        in if keepNodeId then tail attrs else attrs
 
 
 entry :: Text -> ConeEntry

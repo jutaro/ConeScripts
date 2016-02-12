@@ -94,7 +94,7 @@ extractTags fName =
     $ longestSplit
   where
     longestSplit = maximumBy (comparing length)
-        . map (flip T.splitOn fName)
+        . map (`T.splitOn` fName)
         $ delims
     delims      = ["-", " ", "_"]
     stopWords   = ["icon", "the", "glossy", "silver"]

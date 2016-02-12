@@ -4,12 +4,15 @@
         {
             "children": [],
             "isLeaf": true,
+            "nodeId": 2,
             "textId": "tId_Reveal.js",
             "label": "Reveal.js"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/1",
+            "nodeId": 3,
             "textId": "tId_Hello There",
             "label": "Hello There"
         },
@@ -18,47 +21,63 @@
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/2/1",
+                    "nodeId": 5,
                     "textId": "tId_Vertical Slides",
                     "label": "Vertical Slides"
                 },
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/2/2",
+                    "nodeId": 6,
                     "textId": "tId_Basement Level 1",
                     "label": "Basement Level 1"
                 },
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/2/3",
+                    "nodeId": 7,
                     "textId": "tId_Basement Level 2",
                     "label": "Basement Level 2"
                 }
             ],
             "isLeaf": false,
+            "targetUri": "#/2",
+            "nodeId": 4,
             "textId": "tId_Testi Test",
             "label": "Testi Test"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/3",
+            "nodeId": 8,
             "textId": "tId_Slides",
             "label": "Slides"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/4",
+            "nodeId": 9,
             "textId": "tId_Point of View",
             "label": "Point of View"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/5",
+            "nodeId": 10,
             "textId": "tId_Touch Optimized",
             "label": "Touch Optimized"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/6",
+            "nodeId": 11,
             "textId": "tId_",
             "label": ""
         },
@@ -67,29 +86,39 @@
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/7/1",
+                    "nodeId": 13,
                     "textId": "tId_Fragments",
                     "label": "Fragments"
                 },
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/7/2",
+                    "nodeId": 14,
                     "textId": "tId_Fragment Styles",
                     "label": "Fragment Styles"
                 }
             ],
             "isLeaf": false,
+            "targetUri": "#/7",
+            "nodeId": 12,
             "textId": "tId_",
             "label": ""
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/8",
+            "nodeId": 15,
             "textId": "tId_Transition Styles",
             "label": "Transition Styles"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/9",
+            "nodeId": 16,
             "textId": "tId_Themes",
             "label": "Themes"
         },
@@ -98,125 +127,167 @@
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/10/1",
+                    "nodeId": 18,
                     "textId": "tId_Slide Backgrounds",
                     "label": "Slide Backgrounds"
                 },
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/10/2",
+                    "nodeId": 19,
                     "textId": "tId_Image Backgrounds",
                     "label": "Image Backgrounds"
                 },
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/10/3",
+                    "nodeId": 20,
                     "textId": "tId_Tiled Backgrounds",
                     "label": "Tiled Backgrounds"
                 },
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/10/4",
+                    "nodeId": 21,
                     "textId": "tId_Video Backgrounds",
                     "label": "Video Backgrounds"
                 },
                 {
                     "children": [],
                     "isLeaf": true,
+                    "targetUri": "#/10/5",
+                    "nodeId": 22,
                     "textId": "tId_... and GIFs!",
                     "label": "... and GIFs!"
                 }
             ],
             "isLeaf": false,
+            "targetUri": "#/10",
+            "nodeId": 17,
             "textId": "tId_",
             "label": ""
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/11",
+            "nodeId": 23,
             "textId": "tId_Background Transitions",
             "label": "Background Transitions"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/12",
+            "nodeId": 24,
             "textId": "tId_Background Transitions",
             "label": "Background Transitions"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/13",
+            "nodeId": 25,
             "textId": "tId_Pretty Code",
             "label": "Pretty Code"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/14",
+            "nodeId": 26,
             "textId": "tId_Marvelous List",
             "label": "Marvelous List"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/15",
+            "nodeId": 27,
             "textId": "tId_Fantastic Ordered List",
             "label": "Fantastic Ordered List"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/16",
+            "nodeId": 28,
             "textId": "tId_Tabular Tables",
             "label": "Tabular Tables"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/17",
+            "nodeId": 29,
             "textId": "tId_Clever Quotes",
             "label": "Clever Quotes"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/18",
+            "nodeId": 30,
             "textId": "tId_Intergalactic Interconnections",
             "label": "Intergalactic Interconnections"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/19",
+            "nodeId": 31,
             "textId": "tId_Speaker View",
             "label": "Speaker View"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/20",
+            "nodeId": 32,
             "textId": "tId_Export to PDF",
             "label": "Export to PDF"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/21",
+            "nodeId": 33,
             "textId": "tId_Global State",
             "label": "Global State"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/22",
+            "nodeId": 34,
             "textId": "tId_State Events",
             "label": "State Events"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/23",
+            "nodeId": 35,
             "textId": "tId_Take a Moment",
             "label": "Take a Moment"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/24",
+            "nodeId": 36,
             "textId": "tId_Much more",
             "label": "Much more"
         },
         {
             "children": [],
             "isLeaf": true,
+            "targetUri": "#/25",
+            "nodeId": 37,
             "textId": "tId_THE END",
             "label": "THE END"
         }
@@ -224,6 +295,7 @@
     "baseColors": null,
     "isLeaf": false,
     "baseColorModifiers": null,
+    "nodeId": 1,
     "textId": "tId_Symbolian at BOBKonf 2016",
     "label": "Symbolian at BOBKonf 2016"
 }

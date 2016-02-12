@@ -19,7 +19,7 @@ import ConeDemo (fromConeTree)
 import System.Console.GetOpt
 import System.Environment
 import Data.Version (showVersion)
-import Paths_RDFImporter
+import Paths_Importer
 import System.FilePath.Posix(takeExtension, replaceExtension, dropExtension)
 import System.Exit
 import Data.RDF

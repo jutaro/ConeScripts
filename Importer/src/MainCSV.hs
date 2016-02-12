@@ -57,7 +57,7 @@ main = do
     args <- getArgs
     let
         mIconPath = do
-            ix      <- findIndex (== "-i") args
+            ix      <- elemIndex "-i" args
             guard   $ ix < length args - 1
             return  $ args !! (ix + 1)
     if null args
@@ -66,7 +66,7 @@ main = do
             let fName = last args
             guesser <- newIconGuesser mIconPath
             eCsv    <- parseCSVFromFile fName
-            either (putStrLn . show) (main' fName guesser) eCsv
+            either print (main' fName guesser) eCsv
   where
     usage = "usage: CSVImporter [-i <icon directory>] file.csv"
 

@@ -39,13 +39,13 @@ processCSV csv =
   where addressEntry = ConeEntry {
                         ceEntryId     = 0
                       , ceLabel       = pack "Contacts"
+                      , ceTextId       = pack "Contacts"
                       , ceTargetUri   = Nothing
                       , ceComment     = Nothing
                       , ceIconName    = Nothing
                       , ceStlName     = Nothing
                       , ceColor       = Nothing
                       , ceIsLeaf      = False
-                      , ceTextId      = pack ""
                       }
 
 addToGroups :: ConeTree -> ConeTree -> ConeTree
@@ -75,13 +75,13 @@ groupEntryFor :: Text -> ConeEntry
 groupEntryFor name = ConeEntry {
                       ceEntryId     = 0
                     , ceLabel       = name
+                    , ceTextId      = name
                     , ceTargetUri   = Nothing
                     , ceComment     = Nothing
                     , ceIconName    = Nothing
                     , ceStlName     = Nothing
                     , ceColor       = Nothing
                     , ceIsLeaf      = False
-                    , ceTextId      = pack ""
                     }
 
 parseGroupsString :: Parser [String]
@@ -112,12 +112,12 @@ makeEntryCone record =
     entry name record = ConeEntry {
                           ceEntryId     = 0
                         , ceLabel       = pack name
+                        , ceTextId      = pack name
                         , ceTargetUri   = Nothing
                         , ceComment     = Just (pack (getGroups record))
                         , ceIconName    = Nothing
                         , ceStlName     = Nothing
                         , ceColor       = Nothing
                         , ceIsLeaf      = False
-                        , ceTextId      = pack ""
                         }
     childLeafs name record = []

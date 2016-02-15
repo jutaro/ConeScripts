@@ -450,7 +450,11 @@
                     "label": "Research"
                 }
             ],
+            "baseColors": [
+                "#f07942"
+            ],
             "isLeaf": false,
+            "baseColorModifiers": null,
             "targetUri": "http://www.recruit-rgf.com/service/human_resources/",
             "textId": "tId_Human Resources",
             "label": "Human Resources"
@@ -488,7 +492,11 @@
                     "label": "Information for Working Women"
                 }
             ],
+            "baseColors": [
+                "#3e91cd"
+            ],
             "isLeaf": false,
+            "baseColorModifiers": null,
             "targetUri": "http://www.recruit-rgf.com/service/it_trends/",
             "textId": "tId_IT &Trends Media",
             "label": "IT &Trends Media"
@@ -584,7 +592,11 @@
                     "label": "Other Education Information"
                 }
             ],
+            "baseColors": [
+                "#3cb3a1"
+            ],
             "isLeaf": false,
+            "baseColorModifiers": null,
             "targetUri": "http://www.recruit-rgf.com/service/education/",
             "textId": "tId_Education",
             "label": "Education"
@@ -647,7 +659,11 @@
                     "label": "Domestic / International Travel"
                 }
             ],
+            "baseColors": [
+                "#38b4ec"
+            ],
             "isLeaf": false,
+            "baseColorModifiers": null,
             "targetUri": "http://www.recruit-rgf.com/service/travel/",
             "textId": "tId_Travel",
             "label": "Travel"
@@ -857,7 +873,7 @@
                 }
             ],
             "baseColors": [
-                "#e32300"
+                "#87c861"
             ],
             "iconName": "Suumo Housing.png",
             "isLeaf": false,
@@ -934,7 +950,7 @@
                 }
             ],
             "baseColors": [
-                "#23e300"
+                "#e93d9e"
             ],
             "isLeaf": false,
             "baseColorModifiers": null,
@@ -984,7 +1000,11 @@
                     "label": "Premium Cars"
                 }
             ],
+            "baseColors": [
+                "#f4a53b"
+            ],
             "isLeaf": false,
+            "baseColorModifiers": null,
             "targetUri": "http://www.recruit-rgf.com/service/automobiles/",
             "textId": "tId_Automobiles",
             "label": "Automobiles"
@@ -1007,7 +1027,11 @@
                     "label": "Quandoo"
                 }
             ],
+            "baseColors": [
+                "#ebc739"
+            ],
             "isLeaf": false,
+            "baseColorModifiers": null,
             "targetUri": "http://www.recruit-rgf.com/service/dining/",
             "textId": "tId_Dining",
             "label": "Dining"
@@ -1023,8 +1047,12 @@
                     "label": "Hot Pepper Beauty"
                 }
             ],
+            "baseColors": [
+                "#a749a1"
+            ],
             "iconName": "Hot Pepper Beauty.png",
             "isLeaf": false,
+            "baseColorModifiers": null,
             "targetUri": "http://www.recruit-rgf.com/service/beauty/",
             "textId": "tId_Beauty",
             "label": "Beauty"
@@ -1192,7 +1220,11 @@
                     "label": "Life and Local Info"
                 }
             ],
+            "baseColors": [
+                "#ed5148"
+            ],
             "isLeaf": false,
+            "baseColorModifiers": null,
             "targetUri": "http://www.recruit-rgf.com/service/local_life/",
             "textId": "tId_Life & Local Info",
             "label": "Life & Local Info"

@@ -77,11 +77,23 @@ main' fName guesser csv =
     let
         fName'  = replaceExtension fName ".json"
         tree    = applyIconGuesser guesser $ buildFromCSV fName csv
-        demo    = (fromConeTree tree) {subColorate = mkSubcolorate testColorization}
+        demo    = (fromConeTree tree) {subColorate = mkSubcolorate recruitColorization}
     in B.writeFile fName' (encodePretty demo)
 
-testColorization :: [(Text, DemoColorParams)]
-testColorization =
-    [ ("Housing", (Just ["#e32300"], Nothing))
-    , ("Bridal", (Just ["#23e300"], Nothing))
+{-
+root-cone: 0e8bd1
+-}
+
+recruitColorization :: [(Text, DemoColorParams)]
+recruitColorization =
+    [ ("Housing", (Just ["#87c861"], Nothing))
+    , ("Bridal", (Just ["#e93d9e"], Nothing))
+    , ("Human Resources", (Just ["#f07942"], Nothing))
+    , ("IT &Trends Media", (Just ["#3e91cd"], Nothing))
+    , ("Education", (Just ["#3cb3a1"], Nothing))
+    , ("Automobiles", (Just ["#f4a53b"], Nothing))
+    , ("Travel", (Just ["#38b4ec"], Nothing))
+    , ("Dining", (Just ["#ebc739"], Nothing))
+    , ("Beauty", (Just ["#a749a1"], Nothing))
+    , ("Life & Local Info", (Just ["#ed5148"], Nothing))
     ]

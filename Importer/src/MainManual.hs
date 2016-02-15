@@ -38,6 +38,7 @@ main = do
             -- (Just [[0.95, 0.95, 0.95], [0.85, 0.85, 0.85], [0.8, 0.8, 0.8]])
             Nothing
             False
+            id
             (applyIconGuesser iconGuesser root1)
 
     B.writeFile "testData/scene3_1.json" $ encodePretty coneDemo
@@ -48,6 +49,7 @@ main = do
             Nothing
             (Just [[0.96, 0.96, 0.96]])
             False
+            id
             (applyColorSerialization ColAsWebcolor pplRoot)
     B.writeFile "testData/scene3_2.json" $ encodePretty pplZoo
 

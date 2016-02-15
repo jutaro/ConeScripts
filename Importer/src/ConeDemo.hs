@@ -1,31 +1,49 @@
 {-# LANGUAGE OverloadedStrings, RecordWildCards, LambdaCase #-}
 
-module ConeDemo (ConeDemo(..), fromConeTree, entry, node, leaves) where
+module ConeDemo
+    ( ConeDemo(..)
+    , DemoColorParams
+    , fromConeTree
+    , entry
+    , node
+    , leaves
+    , modify
+    , hasKeyValue
+    , mkSubcolorate
+    ) where
 
 import ConeServer.ConeTypes
 import ConeServer.Types
 import Data.Text                        (Text, append)
-import qualified Data.HashMap.Lazy      as HM (union, delete, map)
+import qualified Data.HashMap.Lazy      as HM (union, delete, map, lookup, insert)
 import qualified Data.Vector            as V (map)
 import Data.Aeson                       (ToJSON(..), Value(..), (.=), object)
 
 
+type DemoColor          = Maybe [String]
+type DemoColorMod       = Maybe [[Float]]
+type DemoColorParams    = (DemoColor, DemoColorMod)
+
 data ConeDemo = ConeDemo
     { basePrefix        :: String
-    , baseColorsWeb     :: Maybe [String]
-    , baseModifiers     :: Maybe [[Float]]
+    , baseColorsWeb     :: DemoColor
+    , baseModifiers     :: DemoColorMod
     , withNodeIds       :: Bool
+    , subColorate       :: Value -> Value
     , theTree           :: ConeTree
     }
 
 fromConeTree :: ConeTree -> ConeDemo
-fromConeTree = ConeDemo "prefix" Nothing Nothing False
+fromConeTree = ConeDemo "prefix" Nothing Nothing False id
 
 instance ToJSON ConeDemo where
     toJSON ConeDemo {..} =
         let
-            ~(Object o1) = cleanup withNodeIds $ toJSON $
-                if withNodeIds then enumerateTree coneEntrySetId 1 theTree else theTree
+            ~(Object o1)
+                = subColorate
+                $ cleanup withNodeIds
+                $ toJSON
+                $ if withNodeIds then enumerateTree coneEntrySetId 1 theTree else theTree
             ~(Object o2) = object
                 [ "basePrefix"          .= basePrefix
                 , "baseColors"          .= baseColorsWeb
@@ -60,9 +78,37 @@ leaves :: Bool -> [ConeEntry] -> [ConeTree]
 leaves asCones = map (flip node [] . (\e -> e {ceIsLeaf = not asCones}))
 
 
-{-
-injectAttribs :: Text -> Value -> Value
-injectAttribs key (Array arr) = Array $ V.map (injectAttribs key) arr
--- TODO inject attrib on certain condition (e.g. tId selection)
-injectAttribs _ v = v
--}
+modify :: (Value -> Value) -> (Value -> Bool) -> Value -> Value
+modify f cond =
+    modify'
+  where
+    modify' v@(Array arr) =
+        let v' = Array $ V.map modify' arr
+        in if cond v then f v' else v'
+    modify' v@(Object o) =
+        let v' = Object $ HM.map modify' o
+        in if cond v then f v' else v'
+    modify' v = if cond v then f v else v
+
+hasKeyValue :: Text -> Text -> Value -> Bool
+hasKeyValue k v_ = \case
+    Object o    -> HM.lookup k o == Just (String v_)
+    _           -> False
+
+injectKeyValue :: Text -> Value -> Value -> Value
+injectKeyValue k v_ = \case
+    Object o    -> Object $ HM.insert k v_ o
+    v           -> v
+
+injectColoration :: DemoColorParams -> Text -> Value -> Value
+injectColoration (Nothing, Nothing) _ = id
+injectColoration (cols, mods) tId =
+    modify colorize (hasKeyValue "textId" $ "tId_" `append` tId)
+  where
+    colorize
+        = injectKeyValue "baseColors" (toJSON cols)
+        . injectKeyValue "baseColorModifiers" (toJSON mods)
+
+
+mkSubcolorate :: [(Text, DemoColorParams)] -> Value -> Value
+mkSubcolorate cs v = foldr (\(tId, c) v' -> injectColoration c tId v') v cs

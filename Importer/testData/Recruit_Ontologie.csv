@@ -1,150 +1,150 @@
-Parent,Name,Icon / JPEG-Name
-root,Human Resources,ohne Icon
-root,IT &Trends Media,ohne Icon
-root,Education,ohne Icon
-root,Travel,ohne Icon
-root,Housing,ohne Icon
-root,Bridal,ohne Icon
-root,Automobiles,ohne Icon
-root,Dining,ohne Icon
-root,Beauty,ohne Icon
-root,Life & Local Info,ohne Icon
-Human Resources,Finding Employment,ohne Icon
-Human Resources,Changing Jobs,ohne Icon
-Human Resources,Part-Time Jobs,ohne Icon
-Human Resources,Temporary Staffing,ohne Icon
-Human Resources,Self-Employment / Independent Businesses / Others,ohne Icon
-Human Resources,Research,ohne Icon
-Finding Employment,Rikunabi,Rikunabi
+Parent,Name,URL
+root,Human Resources,http://www.recruit-rgf.com/service/human_resources/
+root,IT &Trends Media,http://www.recruit-rgf.com/service/it_trends/
+root,Education,http://www.recruit-rgf.com/service/education/
+root,Travel,http://www.recruit-rgf.com/service/travel/
+root,Housing,http://www.recruit-rgf.com/service/housing/
+root,Bridal,http://www.recruit-rgf.com/service/bridal/
+root,Automobiles,http://www.recruit-rgf.com/service/automobiles/
+root,Dining,http://www.recruit-rgf.com/service/dining/
+root,Beauty,http://www.recruit-rgf.com/service/beauty/
+root,Life & Local Info,http://www.recruit-rgf.com/service/local_life/
+Human Resources,Finding Employment,http://www.recruit-rgf.com/service/human_resources/finding_employment/
+Human Resources,Changing Jobs,http://www.recruit-rgf.com/service/human_resources/changing_job/
+Human Resources,Part-Time Jobs,http://www.recruit-rgf.com/service/human_resources/part-time_jobs/
+Human Resources,Temporary Staffing,http://www.recruit-rgf.com/service/human_resources/temporary_staffing/
+Human Resources,Self-Employment / Independent Businesses / Others,http://www.recruit-rgf.com/service/human_resources/sif/
+Human Resources,Research,http://www.recruit-rgf.com/service/human_resources/research/
+Finding Employment,Rikunabi,http://job.rikunabi.com/
 Finding Employment,Indeed.com,Indeed.com
-Finding Employment,SPI3,SPI3
-Finding Employment,Work In Japan,Work In Japan
-Finding Employment,Hatalike,Hatalike
-Finding Employment,Shushoku Shop,Shushoku Shop
-Finding Employment,Rikunabi Direct,Rikunabi Direct
-Finding Employment,Shushoku Journal,Shushoku Journal
-Changing Jobs,Recruit Medical Career,Recruit Medical Career
-Changing Jobs,Recruit Executive Agent,Recruit Executive Agent
-Changing Jobs,CAREER CARVER,CAREER CARVER
-Changing Jobs,CDS (CDSi K.K.),CDS (CDSi K.K.)
+Finding Employment,SPI3,http://www.spi.recruit.co.jp/
+Finding Employment,Work In Japan,http://workinjapan.cn/
+Finding Employment,Hatalike,http://www.hatalike.jp/h/r/H100010s.jsp?__u=1455263584318-8926304614835521530
+Finding Employment,Shushoku Shop,http://www.ss-shop.jp/
+Finding Employment,Rikunabi Direct,http://rikunabi-direct.jp/
+Finding Employment,Shushoku Journal,http://journal.rikunabi.com/
+Changing Jobs,Recruit Medical Career,http://www.recruit-mc.co.jp/
+Changing Jobs,Recruit Executive Agent,http://www.recruit-ex.co.jp/en/
+Changing Jobs,CAREER CARVER,https://careercarver.jp/
+Changing Jobs,CDS (CDSi K.K.),http://www.cds-consulting.com/e/
 Changing Jobs,Indeed.com,Indeed.com
-Changing Jobs,Townwork Shain,Townwork Shain
-Changing Jobs,Rikunabi Next,Rikunabi Next
-Changing Jobs,Recruit Agent,Recruit Agent
-Changing Jobs,Shushoku Shop,Shushoku Shop
-Changing Jobs,Rikunabi Next Tech Soken,Rikunabi Next Tech Soken
-Changing Jobs,RGF Executive Search,RGF Executive Search
-Changing Jobs,Hatalike,Hatalike
-Changing Jobs,CodeIQ,CodeIQ
-Changing Jobs,RGF HR Agent,RGF HR Agent
-Changing Jobs,Minna-no-Kyujinban,Minna-no-Kyujinban
-Changing Jobs,Travaille,Travaille
-Changing Jobs,BRecruit,BRecruit
-Changing Jobs,Bó Lè Associates,Bó Lè Associates
+Changing Jobs,Townwork Shain,https://townwork.net/kantou/shain/
+Changing Jobs,Rikunabi Next,http://next.rikunabi.com/
+Changing Jobs,Recruit Agent,http://www.r-agent.co.jp/
+Changing Jobs,Shushoku Shop,http://www.ss-shop.jp/
+Changing Jobs,Rikunabi Next Tech Soken,http://next.rikunabi.com/tech_souken/
+Changing Jobs,RGF Executive Search,http://www.rgf-executive.com/
+Changing Jobs,Hatalike,http://www.hatalike.jp/h/r/H100010s.jsp?__u=1455263584318-8926304614835521530
+Changing Jobs,CodeIQ,https://codeiq.jp/
+Changing Jobs,RGF HR Agent,http://www.rgf-hragent.asia/en/hongkong
+Changing Jobs,Minna-no-Kyujinban,http://kyujinban.jp/
+Changing Jobs,Travaille,http://toranet.jp/t/r/T100010s.jsp
+Changing Jobs,BRecruit,http://www.brecruit.com/index.html
+Changing Jobs,Bó Lè Associates,http://www.bo-le.com/
 Part-Time Jobs,Indeed.com,Indeed.com
-Part-Time Jobs,Minna-no-Kyujinban,Minna-no-Kyujinban
-Part-Time Jobs,From A Navi,From A Navi
-Part-Time Jobs,Travaille,Travaille
-Part-Time Jobs,Townwork,Townwork
-Temporary Staffing,Staff Service Group,Staff Service Group
-Temporary Staffing,Staffmark,Staffmark
-Temporary Staffing,CSI,CSI
-Temporary Staffing,Advantage Resourcing,Advantage Resourcing
-Temporary Staffing,Peoplebank Australia,Peoplebank Australia
-Temporary Staffing,Travaille,Travaille
-Temporary Staffing,Rikunabi Haken,Rikunabi Haken
-Temporary Staffing,Recruit Staffing,Recruit Staffing
-Temporary Staffing,Chandler Macleod Group Limited,Chandler Macleod Group Limited
-Temporary Staffing,Atterro,Atterro
-Self-Employment / Independent Businesses / Others,Recruit Management Solutions,Recruit Management Solutions
-Self-Employment / Independent Businesses / Others,Recruit Learning Club,Recruit Learning Club
-Self-Employment / Independent Businesses / Others,ReCoBook,ReCoBook
-Self-Employment / Independent Businesses / Others,Recruit Management School,Recruit Management School
-Self-Employment / Independent Businesses / Others,Entre,Entre
-Research,Recruit Management School,Recruit Management School
-Research,Recruit Learning Club,Recruit Learning Club
-Research,Recruit Management Solutions,Recruit Management Solutions
-Research,Works,Works
-IT &Trends Media,Information for Business People,ohne Icon
-IT &Trends Media,Information for Working Women,ohne Icon
-Information for Business People,R25,R25
-Information for Working Women,L25,L25
-Education,University / College,ohne Icon
-Education,Other Education Information,ohne Icon
-University / College,Jyuken Sapuri,Jyuken Sapuri
-University / College,Rikunabi Shingaku Book,Rikunabi Shingaku Book
-University / College,Rikunabi Shingaku,Rikunabi Shingaku
-Other Education Information,Eitango sapuri,Eitango sapuri
-Other Education Information,Benkyo Sapuri,Benkyo Sapuri
-Other Education Information,Eikaiwa Sapuri,Eikaiwa Sapuri
-Other Education Information,Rikunabi Shingaku: Career Guidance,Rikunabi Shingaku: Career Guidance
-Other Education Information,College Management,College Management
-Other Education Information,Quipper School,Quipper School
-Travel,Domestic / International Travel,ohne Icon
-Domestic / International Travel,PegiPegi,PegiPegi
+Part-Time Jobs,Minna-no-Kyujinban,http://kyujinban.jp/
+Part-Time Jobs,From A Navi,http://www.froma.com/
+Part-Time Jobs,Travaille,http://toranet.jp/t/r/T100010s.jsp
+Part-Time Jobs,Townwork,https://townwork.net/
+Temporary Staffing,Staff Service Group,http://www.staffservice.co.jp/
+Temporary Staffing,Staffmark,http://www.staffmark.com/home/
+Temporary Staffing,CSI,http://thecsicompanies.com/
+Temporary Staffing,Advantage Resourcing,http://www.advantageresourcing.com/home.aspx?p_PageAlias=home
+Temporary Staffing,Peoplebank Australia,https://www.peoplebank.com.au/?
+Temporary Staffing,Travaille,http://toranet.jp/t/r/T100010s.jsp
+Temporary Staffing,Rikunabi Haken,http://haken.rikunabi.com/
+Temporary Staffing,Recruit Staffing,http://www.r-staffing.co.jp/
+Temporary Staffing,Chandler Macleod Group Limited,http://www.chandlermacleod.com/
+Temporary Staffing,Atterro,http://atterro.com/
+Self-Employment / Independent Businesses / Others,Recruit Management Solutions,http://www.recruit-ms.co.jp/
+Self-Employment / Independent Businesses / Others,Recruit Learning Club,http://recruit-lc.jp/
+Self-Employment / Independent Businesses / Others,ReCoBook,http://www.recobook.recruit.co.jp/
+Self-Employment / Independent Businesses / Others,Recruit Management School,http://www.recruit-ms.co.jp/open-course/
+Self-Employment / Independent Businesses / Others,Entre,http://entrenet.jp/
+Research,Recruit Management School,http://www.recruit-ms.co.jp/open-course/
+Research,Recruit Learning Club,http://recruit-lc.jp/
+Research,Recruit Management Solutions,http://www.recruit-ms.co.jp/
+Research,Works,http://www.works-i.com/english/
+IT &Trends Media,Information for Business People,http://www.recruit-rgf.com/service/it_trends/
+IT &Trends Media,Information for Working Women,http://www.recruit-rgf.com/service/it_trends/
+Information for Business People,R25,http://r25.yahoo.co.jp/
+Information for Working Women,L25,http://l25.jp/
+Education,University / College,http://www.recruit-rgf.com/service/education/
+Education,Other Education Information,http://www.recruit-rgf.com/service/education/
+University / College,Jyuken Sapuri,https://jyukensapuri.jp/
+University / College,Rikunabi Shingaku Book,http://www.recruit-rgf.com/service/education/shingaku-b.html
+University / College,Rikunabi Shingaku,http://shingakunet.com/
+Other Education Information,Eitango sapuri,https://eitangosapuri.jp/
+Other Education Information,Benkyo Sapuri,https://benkyosapuri.jp/
+Other Education Information,Eikaiwa Sapuri,https://eikaiwasapuri.jp/
+Other Education Information,Rikunabi Shingaku: Career Guidance,http://souken.shingakunet.com/
+Other Education Information,College Management,http://souken.shingakunet.com/
+Other Education Information,Quipper School,https://www.quipper.com/en
+Travel,Domestic / International Travel,http://www.recruit-rgf.com/service/travel/
+Domestic / International Travel,PegiPegi,http://www.pegipegi.com/
 Domestic / International Travel,TravelBook.ph,TravelBook.ph
-Domestic / International Travel,Jalan Golf,Jalan Golf
-Domestic / International Travel,Mytour,Mytour
-Domestic / International Travel,Jalan,Jalan
-Domestic / International Travel,AB-Road,AB-Road
-Beauty,Hot Pepper Beauty,Hot Pepper Beauty
-Housing,Housing & Real Estate,ohne Icon
-Housing,Selling,ohne Icon
-Housing,Buying Houses,ohne Icon
-Housing,Custom-Built Houses,ohne Icon
-Housing,Renovation,ohne Icon
-Housing,Rent,ohne Icon
-Housing,Local Info,ohne Icon
-Housing & Real Estate,Suumo,Suumo
-Housing & Real Estate,Movoto,Movoto
-Selling,Suumo,Suumo
-Buying Houses,Suumo,Suumo
-Buying Houses,Suumo Magazine,Suumo Magazine
-Buying Houses,Toshin-ni-Sumu,Toshin-ni-Sumu
-Buying Houses,Suumo Shinchiku Mansion,Suumo Shinchiku Mansion
-Buying Houses,Suumo Counter Shinchiku Mansion,Suumo Counter Shinchiku Mansion
-Custom-Built Houses,Chumon Jutaku by Suumo,Chumon Jutaku by Suumo
-Custom-Built Houses,Suumo Counter Chumon Jutaku,Suumo Counter Chumon Jutaku
-Custom-Built Houses,Suumo,Suumo
-Custom-Built Houses,Suumo Housing,Suumo Housing
-Renovation,Suumo,Suumo
-Renovation,Good Reform,Good Reform
-Rent,Office Movement,Office Movement
-Rent,Suumo,Suumo
-Rent,Suumo Magazine,Suumo Magazine
-Local Info,Suumo Hikkoshi Mitsumori,Suumo Hikkoshi Mitsumori
-Bridal,Zexy,Zexy
-Bridal,Zexy Overseas Wedding,Zexy Overseas Wedding
-Bridal,Zexy Resort Wedding,Zexy Resort Wedding
-Bridal,Zexy Premier,Zexy Premier
-Bridal,zexy insurance counsering counter,zexy insurance counsering counter
-Bridal,Zexy Koimusubi(online dating service),Zexy Koimusubi(online dating service)
-Bridal,Zexy Enmusubi(matchmaking service),Zexy Enmusubi(matchmaking service)
-Bridal,Zexy Wedding Consulting Counter,Zexy Wedding Consulting Counter
-Automobiles,Used Cars,Used Cars
-Automobiles,Premium Cars,Premium Cars
-Used Cars,Car Sensor,Car Sensor
+Domestic / International Travel,Jalan Golf,https://golf-jalan.net/
+Domestic / International Travel,Mytour,http://mytour.vn/
+Domestic / International Travel,Jalan,http://www.jalan.net/
+Domestic / International Travel,AB-Road,http://www.ab-road.net/
+Beauty,Hot Pepper Beauty,http://beauty.hotpepper.jp/
+Housing,Housing & Real Estate,http://www.recruit-rgf.com/service/housing/
+Housing,Selling,http://www.recruit-rgf.com/service/housing/
+Housing,Buying Houses,http://www.recruit-rgf.com/service/housing/
+Housing,Custom-Built Houses,http://www.recruit-rgf.com/service/housing/
+Housing,Renovation,http://www.recruit-rgf.com/service/housing/
+Housing,Rent,http://www.recruit-rgf.com/service/housing/
+Housing,Local Info,http://www.recruit-rgf.com/service/housing/
+Housing & Real Estate,Suumo,http://suumo.jp/
+Housing & Real Estate,Movoto,http://www.movoto.com/
+Selling,Suumo,http://suumo.jp/
+Buying Houses,Suumo,http://suumo.jp/
+Buying Houses,Suumo Magazine,http://suumo.jp/edit/series/magazine/
+Buying Houses,Toshin-ni-Sumu,http://suumo.jp/edit/series/toshin/
+Buying Houses,Suumo Shinchiku Mansion,http://suumo.jp/edit/series/mansion_honshi/
+Buying Houses,Suumo Counter Shinchiku Mansion,http://www.suumocounter.jp/mansion/
+Custom-Built Houses,Chumon Jutaku by Suumo,http://suumo.jp/edit/series/chumon/
+Custom-Built Houses,Suumo Counter Chumon Jutaku,http://www.suumocounter.jp/chumon/?vos=dsmcrect20110415006
+Custom-Built Houses,Suumo,http://suumo.jp/
+Custom-Built Houses,Suumo Housing,http://suumo.jp/edit/series/crr/housing/
+Renovation,Suumo,http://suumo.jp/
+Renovation,Good Reform,http://www.goodreform.jp/
+Rent,Office Movement,http://www.officemovement.com/
+Rent,Suumo,http://suumo.jp/
+Rent,Suumo Magazine,http://suumo.jp/edit/series/magazine/
+Local Info,Suumo Hikkoshi Mitsumori,http://hikkoshi.suumo.jp/
+Bridal,Zexy,http://zexy.net/
+Bridal,Zexy Overseas Wedding,http://zexy.net/abroad/
+Bridal,Zexy Resort Wedding,http://zexy.net/resort/
+Bridal,Zexy Premier,http://zexy.net/mar/honshi/premier.html
+Bridal,zexy insurance counsering counter,http://hoken.zexy.net/
+Bridal,Zexy Koimusubi(online dating service),https://zexy-koimusubi.net/
+Bridal,Zexy Enmusubi(matchmaking service),http://www.recruit-rgf.com/service/bridal/enmusubi.html
+Bridal,Zexy Wedding Consulting Counter,http://zexy.net/navi/
+Automobiles,Used Cars,http://www.recruit-rgf.com/service/automobiles/
+Automobiles,Premium Cars,http://www.recruit-rgf.com/service/automobiles/
+Used Cars,Car Sensor,http://www.carsensor.net/
 Used Cars,D-Ucar.net,D-Ucar.net
-Premium Cars,Car Sensor Edge,Car Sensor Edge
-Dining,Hot Pepper Gourmet,Hot Pepper Gourmet
-Dining,Quandoo,Quandoo
-Life & Local Info,Discount Tickets / Mail Order,Discount Tickets / Mail Order
-Life & Local Info,Qualifications / Lessons,Qualifications / Lessons
-Life & Local Info,Life and Local Info,Life and Local Info
-Discount Tickets / Mail Order,Marqrel,Marqrel
-Discount Tickets / Mail Order,Ponpare Mall,Ponpare Mall
-Discount Tickets / Mail Order,Ponpare,Ponpare
-Discount Tickets / Mail Order,Eruca,Eruca
-Discount Tickets / Mail Order,FunCart,FunCart
-Discount Tickets / Mail Order,Ninsugu,Ninsugu
-Discount Tickets / Mail Order,Akasugu,Akasugu
-Qualifications / Lessons,Ryori Sapuri,Ryori Sapuri
-Qualifications / Lessons,Shikaku Sapuri,Shikaku Sapuri
-Qualifications / Lessons,Tsushin-koza Daijiten,Tsushin-koza Daijiten
-Qualifications / Lessons,Oshieru Manaberu,Oshieru Manaberu
-Qualifications / Lessons,Keiko-to-Manabu,Keiko-to-Manabu
-Life and Local Info,Tabroom,Tabroom
-Life and Local Info,Hot Pepper,Hot Pepper
-Life and Local Info,RecoCheck,RecoCheck
-Life and Local Info,Omise-no-Mikita,Omise-no-Mikita
-Life and Local Info,Insurance channel,Insurance channel
+Premium Cars,Car Sensor Edge,http://www.carsensor-edge.net/
+Dining,Hot Pepper Gourmet,http://www.hotpepper.jp/
+Dining,Quandoo,https://www.quandoo.de/
+Life & Local Info,Discount Tickets / Mail Order,http://www.recruit-rgf.com/service/local_life/
+Life & Local Info,Qualifications / Lessons,http://www.recruit-rgf.com/service/local_life/
+Life & Local Info,Life and Local Info,http://www.recruit-rgf.com/service/local_life/
+Discount Tickets / Mail Order,Marqrel,http://www.marqrel.jp/
+Discount Tickets / Mail Order,Ponpare Mall,http://www.ponparemall.com/
+Discount Tickets / Mail Order,Ponpare,http://ponpare.jp/
+Discount Tickets / Mail Order,Eruca,http://eruca.jp/
+Discount Tickets / Mail Order,FunCart,http://fcart.jp/
+Discount Tickets / Mail Order,Ninsugu,http://www.recruit-rgf.com/service/local_life/ninsugu.html
+Discount Tickets / Mail Order,Akasugu,http://akasugu.fcart.jp/
+Qualifications / Lessons,Ryori Sapuri,https://ryorisapuri.jp/about
+Qualifications / Lessons,Shikaku Sapuri,https://shikakusapuri.jp/
+Qualifications / Lessons,Tsushin-koza Daijiten,http://www.recruit-rgf.com/service/local_life/tkdaijiten.html
+Qualifications / Lessons,Oshieru Manaberu,http://oshierumanaberu.net/
+Qualifications / Lessons,Keiko-to-Manabu,http://www.keikotomanabu.net/
+Life and Local Info,Tabroom,http://tabroom.jp/
+Life and Local Info,Hot Pepper,http://www.recruit-rgf.com/service/local_life/hotpepper.html
+Life and Local Info,RecoCheck,http://recocheck.jp/
+Life and Local Info,Omise-no-Mikita,http://omisenomikata.jp/
+Life and Local Info,Insurance channel,https://hokench.com/

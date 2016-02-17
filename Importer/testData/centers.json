@@ -1,0 +1,81 @@
+{
+    "basePrefix": "video",
+    "entries": [
+        {
+            "textId": "Centers"
+        },
+        {
+            "textId": "Higher Intellectual",
+            "label": "Higher Intellectual",
+            "iconName": "higherIntellectual.png",
+            "color": "#79bc43"
+        },
+        {
+            "textId": "Intellectual",
+            "label": "Intellectual",
+            "iconName": "intellectual.png",
+            "color": "#8cc65d"
+        },
+        {
+            "textId": "Higher Emotional",
+            "label": "Higher Emotional",
+            "iconName": "higherEmotional.png",
+            "color": "#9fd077"
+        },
+        {
+            "textId": "Emotional",
+            "label": "Emotional",
+            "iconName": "emotional.png",
+            "color": "#b2da92"
+        },
+        {
+            "textId": "Moving",
+            "label": "Moving",
+            "iconName": "moving.png",
+            "color": "#c5e4ad"
+        },
+        {
+            "textId": "Sexual",
+            "label": "Sexual",
+            "iconName": "sexual.png",
+            "color": "#d9edc8"
+        },
+        {
+            "textId": "Instinctive",
+            "label": "Instinctive",
+            "iconName": "instinctive.png",
+            "color": "#ecf6e3"
+        }
+    ],
+    "textId": "Centers",
+    "children": [
+        {
+            "textId": "Higher Intellectual",
+            "isLeaf": false
+        },
+        {
+            "textId": "Intellectual",
+            "isLeaf": false
+        },
+        {
+            "textId": "Higher Emotional",
+            "isLeaf": false
+        },
+        {
+            "textId": "Emotional",
+            "isLeaf": false
+        },
+        {
+            "textId": "Moving",
+            "isLeaf": false
+        },
+        {
+            "textId": "Sexual",
+            "isLeaf": false
+        },
+        {
+            "textId": "Instinctive",
+            "isLeaf": false
+        }
+    ]
+}

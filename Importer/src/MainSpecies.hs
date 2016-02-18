@@ -25,6 +25,7 @@ import Data.RDF
 import Debug.Trace
 import Data.Text (pack, unpack, Text)
 import qualified Data.ByteString.Lazy as BS(writeFile)
+import Data.List (sortBy)
 
 import ConeServer.Types
 import ConeServer.ConeTypes
@@ -139,22 +140,25 @@ inFamily    = pack "http://rdf.geospecies.org/ont/geospecies#inFamily"
 species     = pack "http://rdf.geospecies.org/ont/geospecies#SpeciesConcept"
 label       = pack "http://rdf.geospecies.org/ont/geospecies#hasCanonicalName"
 altLabel    = pack "http://purl.org/dc/terms/title"
+foafTopic   = pack "http://xmlns.com/foaf/0.1/topic"
 
 processTriples :: HashMapS -> String -> Node -> ConeTree
 processTriples triples lang root =
-    let allKingdom   = map (makeCone triples "Kingdom" . subjectOf) $
+    let allKingdom   = sortBy sortFunction $ map (makeCone triples "Kingdom" . subjectOf) $
                                 query triples Nothing (Just (UNode typeUri)) (Just (UNode kingdom))
-        allPhylum    = map (makeCone triples "Phylum" . subjectOf) $
+        allPhylum    = sortBy sortFunction $ map (makeCone triples "Phylum" . subjectOf) $
                                 query triples Nothing (Just (UNode typeUri)) (Just (UNode phylum))
-        allClass     = map (makeCone triples "Class" . subjectOf) $
+        allClass     = sortBy sortFunction $ map (makeCone triples "Class" . subjectOf) $
                                 query triples Nothing (Just (UNode typeUri)) (Just (UNode bioClass))
-        allOrder     = map (makeCone triples "Order" . subjectOf) $
+        allOrder     = sortBy sortFunction $ map (makeCone triples "Order" . subjectOf) $
                                 query triples Nothing (Just (UNode typeUri)) (Just (UNode order))
-        allFamily    = map (makeCone triples "Family" . subjectOf) $
+        allFamily    = sortBy sortFunction $ map (makeCone triples "Family" . subjectOf) $
                                 query triples Nothing (Just (UNode typeUri)) (Just (UNode family))
-        allSpecies   = map (makeCone triples "Species" . subjectOf) $
+        (specialFamilies, otherFamilies) = partition (\ a -> ceLabel (roseLeaf a) == pack "Family Caviidae"
+                                                            || ceLabel (roseLeaf a) == pack "Family Felidae") allFamily
+        allSpecies   = sortBy sortFunction $ map (makeCone triples "Species" . subjectOf) $
                                 query triples Nothing (Just (UNode typeUri)) (Just (UNode species))
-        families     = foldl' (addTo triples inFamily) allFamily allSpecies
+        families     = (foldl' (addTo triples inFamily) specialFamilies allSpecies) -- ++ otherFamilies
         orders       = foldl' (addTo triples inOrder) allOrder families
         classes      = foldl' (addTo triples inClass) allClass orders
         phylus       = foldl' (addTo triples inPhylum) allPhylum classes
@@ -174,7 +178,8 @@ processTriples triples lang root =
                 , roseMeta      = -1
                 , roseChildren  = kingdoms
                 }
-  where rootEntry = ConeEntry
+  where
+    rootEntry = ConeEntry
               { ceEntryId     = 0
               , ceLabel       = pack ""
               , ceTargetUri   = Nothing
@@ -185,6 +190,7 @@ processTriples triples lang root =
               , ceIsLeaf      = False
               , ceTextId      = pack "Root"
               }
+    sortFunction a b = compare (ceLabel (roseLeaf a)) (ceLabel (roseLeaf b))
 
 addTo :: HashMapS ->  Text -> [ConeTree] -> ConeTree -> [ConeTree]
 addTo triples selectorUri allParents theTree   =
@@ -220,7 +226,13 @@ makeEntry triples typeString subjectNode =
         textId      = case subjectNode of
                         UNode t -> t
                         n -> pack (show n)
-        condTargetUri  = Nothing
+        condTargetUri  = if typeString == "Species"
+                            then case map objectOf $ query triples (Just subjectNode) (Just (UNode foafTopic)) Nothing of
+                                    l@(hd:tl) -> case filter (\(UNode uri) -> isInfixOf "dbpedia" (unpack uri)) l of
+                                                    (UNode hd):tl -> Just hd
+                                                    _ -> Nothing
+                                    _ -> Nothing
+                            else Nothing
         isLeaf = typeString == "Species"
     in ConeEntry
         { ceEntryId     = 0

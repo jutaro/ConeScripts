@@ -1,0 +1,125 @@
+{
+    "basePrefix": "galaxies",
+    "children": [
+        {
+            "children": [
+                {
+                    "children": [],
+                    "isLeaf": true,
+                    "textId": "tId_Orion–Cygnus",
+                    "label": "Orion–Cygnus"
+                }
+            ],
+            "isLeaf": false,
+            "textId": "tId_Milky Way",
+            "label": "Milky Way"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Andromeda - M31",
+            "label": "Andromeda - M31"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Black Eye Galaxy",
+            "label": "Black Eye Galaxy"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Bode's - M81",
+            "label": "Bode's - M81"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Cartwheel Galaxy",
+            "label": "Cartwheel Galaxy"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Cigar Galaxy",
+            "label": "Cigar Galaxy"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Comet Galaxy",
+            "label": "Comet Galaxy"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Cosmos Redshift 7",
+            "label": "Cosmos Redshift 7"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Hoag's Object",
+            "label": "Hoag's Object"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Large Magellanic Cloud",
+            "label": "Large Magellanic Cloud"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Small Magellanic Cloud",
+            "label": "Small Magellanic Cloud"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Mayall's Object",
+            "label": "Mayall's Object"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Pinwheel - M101",
+            "label": "Pinwheel - M101"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Sombrero - M104",
+            "label": "Sombrero - M104"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Sunflower Galaxy",
+            "label": "Sunflower Galaxy"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Tadpole Galaxy",
+            "label": "Tadpole Galaxy"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Triangulum - M33",
+            "label": "Triangulum - M33"
+        },
+        {
+            "children": [],
+            "isLeaf": true,
+            "textId": "tId_Whirlpool Galaxy",
+            "label": "Whirlpool Galaxy"
+        }
+    ],
+    "baseColors": null,
+    "isLeaf": false,
+    "baseColorModifiers": null,
+    "textId": "",
+    "label": ""
+}

@@ -10,7 +10,7 @@ import Data.Aeson
 import Data.Aeson.Types
 import Data.Aeson.Encode.Pretty         (encodePretty)
 import qualified Data.ByteString.Lazy   as B (writeFile)
-import Data.Text                        (Text, append)
+import Data.Text                        (Text, append, singleton)
 import Debug.Trace
 
 
@@ -38,7 +38,9 @@ main = do
 
 
 firstLevel :: [ConeEntry]
-firstLevel = map (\col -> (entry "") {ceColor = Just col}) firstLevelCols
+firstLevel = 
+    [(entry "") {ceColor = Just col, ceTextId = "tId_" `append` singleton tid}
+        | (col, tid) <- zip firstLevelCols ['a'..]]
 
 firstLevelCols :: [ConeColor]
 firstLevelCols =

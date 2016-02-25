@@ -17,7 +17,7 @@ galaxyTree :: IO ConeTree
 galaxyTree = do    
     home    <- milkyWay
     others  <- mapM (generate . genGalaxy) galaxies
-    return  $ RoseLeaf emptyLeaf {ceIsLeaf = False} (-1) (map toTree $ home:others)
+    return  $ RoseLeaf emptyLeaf {ceIsLeaf = False, ceColor = decode' "\"#b6829b\""} (-1) (map toTree $ home:others)
   where
     genGalaxy n = do
         Galaxy (Body _ col, cs) <- arbitrary

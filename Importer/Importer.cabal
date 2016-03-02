@@ -23,7 +23,7 @@ executable RDFImporter
 
   build-depends:    base >=4.8 && <4.9,
                     rdf4h >= 2,
-                    ConeServer >= 0.0.2,
+                    ConeServer >= 0.3,
                     filepath >= 1.4,
                     aeson >=0.8 && <0.10,
                     bytestring >=0.10,
@@ -47,7 +47,7 @@ executable CSVImporter
     ghc-options:      -O2
 
     build-depends:    base >=4.8 && <4.9,
-                      ConeServer >= 0.0.2,
+                      ConeServer >= 0.3,
                       filepath >= 1.4,
                       aeson >=0.8 && <0.10,
                       bytestring >=0.10,
@@ -70,7 +70,7 @@ executable ManualModel
       ghc-options:      -O2
 
       build-depends:    base >=4.8 && <4.9,
-                        ConeServer >= 0.0.2,
+                        ConeServer >= 0.3,
                         aeson >=0.8 && <0.10,
                         bytestring >=0.10,
                         text >= 1.2.2.0,
@@ -95,7 +95,7 @@ executable RevealImporter
     ghc-options:      -O2
 
     build-depends:    base >=4.8 && <4.9,
-                      ConeServer >= 0.0.2,
+                      ConeServer >= 0.3,
                       aeson >=0.8 && <0.10,
                       aeson-pretty >= 0.7.2,
                       bytestring >=0.10,
@@ -121,7 +121,7 @@ executable Manipulator
 
       build-depends:    base >=4.8 && <4.9,
                         rdf4h >= 2,
-                        ConeServer >= 0.0.2,
+                        ConeServer >= 0.3,
                         filepath >= 1.4,
                         aeson >=0.8 && <0.10,
                         bytestring >=0.10,
@@ -148,7 +148,7 @@ executable SpeciesImporter
 
             build-depends:    base >=4.8 && <4.9,
                               rdf4h >= 2,
-                              ConeServer >= 0.0.2,
+                              ConeServer >= 0.3,
                               filepath >= 1.4,
                               aeson >=0.8 && <0.10,
                               bytestring >=0.10,
@@ -170,7 +170,7 @@ executable GalaxyModel
       ghc-options:      -O2
 
       build-depends:    base >=4.8 && <4.9,
-                        ConeServer >= 0.0.2,
+                        ConeServer >= 0.3,
                         aeson >=0.8 && <0.10,
                         bytestring >=0.10,
                         text >= 1.2.2.0,

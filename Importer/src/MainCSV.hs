@@ -9,12 +9,17 @@ import ConeDemo
 import qualified Data.Text              as T
 import qualified Data.HashMap.Lazy      as M
 import qualified Data.ByteString.Lazy   as B (writeFile)
+import qualified Data.ByteString.Lazy.Char8   as B (pack)
+
 
 import Data.Aeson.Encode.Pretty         (encodePretty)
+import Data.Aeson                       (decode')
 import System.FilePath.Posix            (takeFileName, replaceExtension, dropExtension)
 import System.Environment
 import Data.List
 import Data.Ord
+import Data.Maybe
+import Control.Monad
 import Data.Function
 import Debug.Trace
 
@@ -35,13 +40,20 @@ buildFromCSV fName csv_@(header:_) =
       (_:"arent"):(_:"ame"):_   -> trace (concat $ "dropped header: ":header) $ tail csv_
       _                         -> csv_
 
-    parents :: M.HashMap Text Int
+    parents :: M.HashMap T.Text Int
     parents = M.fromList . flip zip [0..] . map (T.pack . (!! 0)) $ csv
 
     grouped = groupByKey rows
     rows    = flip map csv $ \case
-        [par, name]     -> (parents M.! T.pack par, (T.pack name, Nothing))
-        par:name:uri:_  -> (parents M.! T.pack par, (T.pack name, if "http" `isPrefixOf` uri then Just (T.pack uri) else Nothing))
+        [par, name] ->
+            (parents M.! T.pack par, (T.pack name, Nothing, Nothing))
+        [par, name, uri] ->
+            (parents M.! T.pack par, (T.pack name, checkUri uri, Nothing))
+        par:name:uri:col:_ ->
+            (parents M.! T.pack par, (T.pack name, checkUri uri, checkCol col))
+
+    checkUri uri = if null uri then Nothing else Just $ T.pack uri
+    checkCol col = if head col == '#' && length col == 7 then Just $ B.pack col else Nothing
 
     attach e @ ConeEntry {ceLabel = label} =
         RoseLeaf e {ceIsLeaf = null children} (-1) $
@@ -49,7 +61,7 @@ buildFromCSV fName csv_@(header:_) =
       where
         children = fromMaybe [] (M.lookup label parents >>= flip lookup grouped)
 
-    entryWithUri (label, uri) = (entry label) {ceTargetUri = uri}
+    entryWithUri (label, uri, col) = (entry label) {ceTargetUri = uri, ceColor = col >>= decode'}
 
 
 main :: IO ()
@@ -77,13 +89,11 @@ main' fName guesser csv =
     let
         fName'  = replaceExtension fName ".json"
         tree    = applyIconGuesser guesser $ buildFromCSV fName csv
-        demo    = (fromConeTree tree) {subColorate = mkSubcolorate recruitColorization}
+        demo    = (fromConeTree tree) -- {subColorate = mkSubcolorate recruitColorization}
     in B.writeFile fName' (encodePretty demo)
 
-{-
-root-cone: 0e8bd1
--}
 
+{-
 recruitColorization :: [(Text, DemoColorParams)]
 recruitColorization =
     [ ("Housing", (Just ["#87c861"], Nothing))
@@ -97,3 +107,4 @@ recruitColorization =
     , ("Beauty", (Just ["#a749a1"], Nothing))
     , ("Life & Local Info", (Just ["#ed5148"], Nothing))
     ]
+-}

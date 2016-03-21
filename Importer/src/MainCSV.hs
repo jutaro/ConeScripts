@@ -53,6 +53,7 @@ buildFromCSV fName csv_@(header:_) =
             (parents M.! T.pack par, (T.pack name, checkUri uri, checkCol col))
 
     checkUri uri = if null uri then Nothing else Just $ T.pack uri
+    checkCol []  = Nothing
     checkCol col = if head col == '#' && length col == 7 then Just $ B.pack col else Nothing
 
     attach e @ ConeEntry {ceLabel = label} =

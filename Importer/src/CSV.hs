@@ -22,6 +22,8 @@ import Parser.CSV
 import ConeServer.Types
 import ConeServer.ConeTypes
 import Data.Text (pack, unpack, Text)
+import Data.Maybe
+import Debug.Trace
 import Text.ParserCombinators.Parsec
 
 getGroups :: Record -> String

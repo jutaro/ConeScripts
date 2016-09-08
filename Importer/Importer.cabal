@@ -21,11 +21,11 @@ executable RDFImporter
   -- other-extensions:
   ghc-options:      -O2
 
-  build-depends:    base >=4.8 && <4.9,
+  build-depends:    base >=4.8 && <5,
                     rdf4h >= 2,
                     ConeServer >= 0.3,
                     filepath >= 1.4,
-                    aeson ==0.11.*,
+                    aeson>=1,
                     bytestring >=0.10,
                     text >= 1.2.2.0,
                     aeson-pretty >= 0.7.2,
@@ -46,10 +46,10 @@ executable CSVImporter
 
     ghc-options:      -O2
 
-    build-depends:    base >=4.8 && <4.9,
+    build-depends:    base >=4.8 && <5,
                       ConeServer >= 0.3,
                       filepath >= 1.4,
-                      aeson ==0.11.*,
+                      aeson >=1,
                       bytestring >=0.10,
                       text >= 1.2.2.0,
                       aeson-pretty >= 0.7.2,
@@ -69,9 +69,9 @@ executable ManualModel
 
       ghc-options:      -O2
 
-      build-depends:    base >=4.8 && <4.9,
+      build-depends:    base >=4.8 && <5,
                         ConeServer >= 0.3,
-                        aeson ==0.11.*,
+                        aeson >=1,
                         bytestring >=0.10,
                         text >= 1.2.2.0,
                         aeson-pretty >= 0.7.2,
@@ -94,9 +94,9 @@ executable RevealImporter
 
     ghc-options:      -O2
 
-    build-depends:    base >=4.8 && <4.9,
+    build-depends:    base >=4.8 && <5,
                       ConeServer >= 0.3,
-                      aeson ==0.11.*,
+                      aeson >=1,
                       aeson-pretty >= 0.7.2,
                       bytestring >=0.10,
                       text >= 1.2.2.0,
@@ -119,11 +119,11 @@ executable Manipulator
       -- other-extensions:
       ghc-options:      -O2
 
-      build-depends:    base >=4.8 && <4.9,
+      build-depends:    base >=4.8 && <5,
                         rdf4h >= 2,
                         ConeServer >= 0.3,
                         filepath >= 1.4,
-                        aeson ==0.11.*,
+                        aeson >=1,
                         bytestring >=0.10,
                         text >= 1.2.2.0,
                         aeson-pretty >= 0.7.2,
@@ -146,11 +146,11 @@ executable SpeciesImporter
             -- other-extensions:
             ghc-options:      -O2
 
-            build-depends:    base >=4.8 && <4.9,
+            build-depends:    base >=4.8 && <5,
                               rdf4h >= 2,
                               ConeServer >= 0.3,
                               filepath >= 1.4,
-                              aeson ==0.11.*,
+                              aeson >=1,
                               bytestring >=0.10,
                               text >= 1.2.2.0,
                               aeson-pretty >= 0.7.2,
@@ -169,9 +169,9 @@ executable GalaxyModel
 
       ghc-options:      -O2
 
-      build-depends:    base >=4.8 && <4.9,
+      build-depends:    base >=4.8 && <5,
                         ConeServer >= 0.3,
-                        aeson ==0.11.*,
+                        aeson >=1,
                         bytestring >=0.10,
                         text >= 1.2.2.0,
                         aeson-pretty >= 0.7.2,

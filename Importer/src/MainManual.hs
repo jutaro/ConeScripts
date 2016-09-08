@@ -7,6 +7,7 @@ import ConeDemo
 import ConeServer.ConeTypes
 import ConeServer.Types
 
+import Control.Monad
 import Data.Aeson
 import Data.Aeson.Types
 import Data.Aeson.Encode.Pretty         (encodePretty)

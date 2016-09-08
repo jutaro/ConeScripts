@@ -36,8 +36,8 @@ buildFromCSV fName csv_@(header:_) =
     renameRoot $ attach (entry "root")
   where
     renameRoot (RoseLeaf e x ys) = RoseLeaf e {ceLabel = T.pack . dropExtension . takeFileName $ fName} x ys
-    csv = case header of
-      (_:"arent"):(_:"ame"):_   -> trace (concat $ "dropped header: ":header) $ tail csv_
+    csv = filter (\row -> (not . null) row && row /= [""]) $ case header of
+      (_:"arent"):(_:"ame"):_   -> trace ("dropped header: " ++ intercalate "," header) $ tail csv_
       _                         -> csv_
 
     parents :: M.HashMap T.Text Int
@@ -45,6 +45,8 @@ buildFromCSV fName csv_@(header:_) =
 
     grouped = groupByKey rows
     rows    = flip map csv $ \case
+        []  -> error "empty row"
+        [_] -> error "not enough columns"
         [par, name] ->
             (parents M.! T.pack par, (T.pack name, Nothing, Nothing))
         [par, name, uri] ->
@@ -89,9 +91,11 @@ main' :: FilePath -> IconGuesser -> CSV -> IO ()
 main' fName guesser csv =
     let
         fName'  = replaceExtension fName ".json"
-        tree    = applyIconGuesser guesser $ buildFromCSV fName csv
+        tree    = -- applyIconGuesser guesser $
+                    buildFromCSV fName csv
         demo    = (fromConeTree tree) -- {subColorate = mkSubcolorate recruitColorization}
-    in B.writeFile fName' (encodePretty demo)
+    in B.writeFile fName' (encodePretty tree)
+        -- B.writeFile fName' (encodePretty demo)
 
 
 {-

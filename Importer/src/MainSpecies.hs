@@ -15,6 +15,7 @@
 import IconGuesser
 import ConeDemo (fromConeTree)
 
+import Data.List
 import System.Console.GetOpt
 import System.Environment
 import Data.Version (showVersion)

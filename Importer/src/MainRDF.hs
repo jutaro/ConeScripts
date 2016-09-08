@@ -23,6 +23,7 @@ import Paths_Importer
 import System.FilePath.Posix(takeExtension, replaceExtension, dropExtension)
 import System.Exit
 import Data.RDF
+import Data.Maybe
 import Debug.Trace
 import Data.Text (pack, unpack, Text)
 import qualified Data.ByteString.Lazy as BS(writeFile)

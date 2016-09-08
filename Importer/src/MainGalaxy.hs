@@ -6,6 +6,9 @@ import ConeDemo
 import ConeServer.ConeTypes
 import ConeServer.Types
 
+import Control.Monad
+import Data.Monoid
+import Data.Maybe
 import Data.Aeson
 import Data.Aeson.Types
 import Data.Aeson.Encode.Pretty         (encodePretty)
@@ -25,7 +28,7 @@ main = do
     glxRoot <- galaxyTree
     let
         root = node ((entry "") {ceColor = decode' "\"#83b4c7\""}) (glxRoot : leaves True firstLevel)
-        
+
         glxZoo = ConeDemo "galaxies"
             Nothing
             Nothing
@@ -38,7 +41,7 @@ main = do
 
 
 firstLevel :: [ConeEntry]
-firstLevel = 
+firstLevel =
     [(entry "") {ceColor = Just col, ceTextId = "tId_" `append` singleton tid}
         | (col, tid) <- zip firstLevelCols ['a'..]]
 
@@ -47,5 +50,3 @@ firstLevelCols =
     mapMaybe dec ["#b6829b", "#c2a8b6", "#907c83", "#71616d", "#774e5f", "#885469"]
   where
     dec col = decode' $ "\"" <> col <> "\""
-
-

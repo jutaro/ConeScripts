@@ -91,11 +91,10 @@ main' :: FilePath -> IconGuesser -> CSV -> IO ()
 main' fName guesser csv =
     let
         fName'  = replaceExtension fName ".json"
-        tree    = -- applyIconGuesser guesser $
+        tree    = applyIconGuesser guesser $
                     buildFromCSV fName csv
         demo    = (fromConeTree tree) -- {subColorate = mkSubcolorate recruitColorization}
-    in B.writeFile fName' (encodePretty tree)
-        -- B.writeFile fName' (encodePretty demo)
+    in B.writeFile fName' (encodePretty demo)
 
 
 {-

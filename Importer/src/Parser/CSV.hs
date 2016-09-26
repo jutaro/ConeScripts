@@ -26,7 +26,7 @@ module Parser.CSV (CSV
 import Text.ParserCombinators.Parsec
 import Data.List (intersperse, intercalate)
 import Data.Char (isSpace)
-import System.IO (hGetContents, latin1, hSetEncoding, openFile)
+import System.IO (hGetContents, utf8, hSetEncoding, openFile)
 import GHC.IO.IOMode (IOMode(..))
 
 -- | A CSV file is a series of records. According to the RFC, the
@@ -69,7 +69,7 @@ parseCSV = parse csv
 parseCSVFromFile :: FilePath -> IO (Either ParseError CSV)
 parseCSVFromFile fp = do
     hdl <- openFile fp ReadMode
-    hSetEncoding hdl latin1
+    hSetEncoding hdl utf8
     str <- hGetContents hdl
     return (parse csv fp str)
 

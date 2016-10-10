@@ -119,7 +119,8 @@ inputConeTree fp = do
     fc <- BL.readFile fp
     case decodeConeTree fc of
         Left errorString -> error "errorString"
-        Right model -> trace ("model color:" ++ show (ceColor (roseLeaf model))) $  return model
+        Right model -> trace ("model color!") --  ++ show (ceColor (roseLeaf model)))
+                        $ return model
 
 outputConeTree :: FilePath -> ConeTree -> IO ()
 outputConeTree f coneTree =

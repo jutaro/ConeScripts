@@ -177,7 +177,7 @@ buildTreeFrom root triples allClasses classEntries propertyEntries = constructNo
                                                 UNode t -> t == ceTextId entry
                                                 _ -> False) classEntries of
                         [entry] -> entry
-                        l -> error ("EntryFor node: " ++ show node ++ "not consistent with: " ++ show l)
+                        l -> error "Inconsistent node entries" --("EntryFor node: " ++ show node ++ "not consistent with: " ++ show l)
 
     propertiesFor node =
         let props = map subjectOf $ query triples  Nothing (Just (UNode domainProperty)) (Just node)

@@ -78,21 +78,24 @@ main = do
     if null args
         then putStrLn usage
         else do
-            let fName = last args
+            let
+                fName   = last args
+                expl    = "--explode" `elem` args
             guesser <- newIconGuesser mIconPath
             eCsv    <- parseCSVFromFile fName
-            either print (main' fName guesser) eCsv
+            either print (main' fName expl guesser) eCsv
   where
-    usage = "usage: CSVImporter [-i <icon directory>] file.csv"
+    usage = "usage: CSVImporter [-i <icon directory>] [--explode] file.csv"
 
 
 
-main' :: FilePath -> IconGuesser -> CSV -> IO ()
-main' fName guesser csv =
+main' :: FilePath -> Bool -> IconGuesser -> CSV -> IO ()
+main' fName explode guesser csv =
     let
         fName'  = replaceExtension fName ".json"
-        tree    = applyIconGuesser guesser $
-                    buildFromCSV fName csv
+        tree    = applyIconGuesser guesser
+                $ (if explode then explodeCones else id)
+                $ buildFromCSV fName csv
         demo    = (fromConeTree tree) -- {subColorate = mkSubcolorate recruitColorization}
     in B.writeFile fName' (encodePretty demo)
 

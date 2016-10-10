@@ -4,6 +4,7 @@ module ConeDemo
     ( ConeDemo(..)
     , DemoColorParams
     , fromConeTree
+    , explodeCones
     , entry
     , node
     , leaves
@@ -35,6 +36,12 @@ data ConeDemo = ConeDemo
 
 fromConeTree :: ConeTree -> ConeDemo
 fromConeTree = ConeDemo "prefix" Nothing Nothing False id
+
+-- all cones are displayed as cones; no leaf nodes left in a tree
+explodeCones :: ConeTree -> ConeTree
+explodeCones = fmap explodeEntry
+  where
+    explodeEntry e = e {ceIsLeaf = False}
 
 instance ToJSON ConeDemo where
     toJSON ConeDemo {..} =
